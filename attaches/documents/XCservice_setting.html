@@ -73,10 +73,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#service-environment-setting" id="toc-service-environment-setting" class="nav-link active" data-scroll-target="#service-environment-setting">Service environment setting</a>
+  <ul class="collapse">
+  <li><a href="#basic-setting" id="toc-basic-setting" class="nav-link" data-scroll-target="#basic-setting">Basic setting</a></li>
+  <li><a href="#submit-tasks-in-batched-and-deal-data-in-one-line-code-way" id="toc-submit-tasks-in-batched-and-deal-data-in-one-line-code-way" class="nav-link" data-scroll-target="#submit-tasks-in-batched-and-deal-data-in-one-line-code-way">Submit tasks in batched and deal data in one-line-code way</a></li>
+  </ul></li>
+  <li><a href="#local-computer-environment-setting" id="toc-local-computer-environment-setting" class="nav-link" data-scroll-target="#local-computer-environment-setting">Local computer environment setting</a>
+  <ul class="collapse">
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows">Windows</a></li>
+  </ul></li>
+  <li><a href="#quarto-user-guide" id="toc-quarto-user-guide" class="nav-link" data-scroll-target="#quarto-user-guide">Quarto user guide</a></li>
+  </ul>
+</nav>
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -116,41 +133,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>get the suitable version of anaconda, here python3.8, and then install it in your target folder</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x Anaconda3-2020.07-Linux-x86_64.sh</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./Anaconda3-2020.07-Linux-x86_64.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">wget</span> https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">chmod</span> +x Anaconda3-2020.07-Linux-x86_64.sh</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="ex">./Anaconda3-2020.07-Linux-x86_64.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>if unix system don’t link anaconda, then we should link the path by ourselves</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/username/.bashrc</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span>/home/anaconda3/bin:<span class="va">$PATH</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">cd</span> /home/username/.bashrc</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span>/home/anaconda3/bin:<span class="va">$PATH</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>here, we can install the packages (i.e., pyx and kwant for me) by the ‘conda’ or ‘pip’ package magnager</li>
 </ul>
 <ol type="1">
 <li>tight-binding (<a href="https://docs.pybinding.site/en/stable/install/index.html">pybinding</a>,<a href="https://github.com/joselado/pyqula">pyqula</a>)</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge pybinding</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install <span class="at">--upgrade</span> pyqula</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge pybinding</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">pip3</span> install <span class="at">--upgrade</span> pyqula</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li>quantum transport (<a href="https://kwant-project.org/install">Kwant</a>,<a href="https://tkwant.kwant-project.org/doc/dev/pre/installation.html">tkwant</a>)</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install tkwant <span class="at">-c</span> conda-forge</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install kwant</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">conda</span> install tkwant <span class="at">-c</span> conda-forge</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">pip3</span> install kwant</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li>topological invariant</li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install pfapack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">pip3</span> install pfapack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
 <li>data plotting (<a href="https://pyx-project.org/examples/index.html">pyx</a>)</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install pyx</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install pdf2image</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">pip3</span> install pyx</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">pip3</span> install pdf2image</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Install ‘MUMPS’ (optional), using conda environment, <a href="https://anaconda.org/conda-forge/mumps">comda-forge/packages/mumps</a></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-forge::mumps</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-forge/label/cf201901::mumps</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-forge/label/cf202003::mumps</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-forge/label/gcc7::mumps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="ex">conda</span> install conda-forge::mumps</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="ex">conda</span> install conda-forge/label/cf201901::mumps</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="ex">conda</span> install conda-forge/label/cf202003::mumps</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="ex">conda</span> install conda-forge/label/gcc7::mumps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>if you are failed to install this package, just try the command lines one-by-one.</p>
 </section>
 <section id="submit-tasks-in-batched-and-deal-data-in-one-line-code-way" class="level3">
@@ -181,18 +198,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> <span class="dv">10</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>ax.plot(theta, r)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb8-5"><a href="#cb8-5"></a>theta <span class="op">=</span> <span class="dv">10</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb8-6"><a href="#cb8-6"></a>fig, ax <span class="op">=</span> plt.subplots(</span>
+<span id="cb8-7"><a href="#cb8-7"></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
+<span id="cb8-8"><a href="#cb8-8"></a>)</span>
+<span id="cb8-9"><a href="#cb8-9"></a>ax.plot(theta, r)</span>
+<span id="cb8-10"><a href="#cb8-10"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb8-11"><a href="#cb8-11"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb8-12"><a href="#cb8-12"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-polar" class="quarto-figure quarto-figure-center anchored">
@@ -204,6 +221,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
+</section>
+<section id="quarto-user-guide" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-user-guide">Quarto user guide</h2>
+<p><a href="https://quarto.org/docs/reference/formats/opml.html">OPML Options</a></p>
 </section>
 
 </main>
