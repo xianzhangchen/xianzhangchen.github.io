@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="X.-Z. CHEN">
-<meta name="dcterms.date" content="2023-11-10">
+<meta name="dcterms.date" content="2024-03-18">
 
-<title>Environment Setting</title>
+<title>Calculation environment setting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,8 +81,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Environment Setting</h1>
-<p class="subtitle lead">A guide for convenience</p>
+<h1 class="title">Calculation environment setting</h1>
+<p class="subtitle lead">A guide</p>
 </div>
 
 
@@ -99,7 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 10, 2023</p>
+      <p class="date">March 18, 2024</p>
     </div>
   </div>
   
@@ -114,46 +114,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="basic-setting" class="level3">
 <h3 class="anchored" data-anchor-id="basic-setting">Basic setting</h3>
 <ul>
-<li><ol type="1">
 <li>get the suitable version of anaconda, here python3.8, and then install it in your target folder</li>
-</ol></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x Anaconda3-2020.07-Linux-x86_64.sh</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./Anaconda3-2020.07-Linux-x86_64.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><ol start="2" type="1">
 <li>if unix system don’t link anaconda, then we should link the path by ourselves</li>
-</ol></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/username/.bashrc</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span>/home/anaconda3/bin:<span class="va">$PATH</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><ol start="3" type="1">
 <li>here, we can install the packages (i.e., pyx and kwant for me) by the ‘conda’ or ‘pip’ package magnager</li>
-</ol></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install tkwant <span class="at">-c</span> conda-forge</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install kwant</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install pyx</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge pybinding</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install <span class="at">--upgrade</span> pyqula</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>tight-binding (<a href="https://docs.pybinding.site/en/stable/install/index.html">pybinding</a>,<a href="https://github.com/joselado/pyqula">pyqula</a>)</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge pybinding</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install <span class="at">--upgrade</span> pyqula</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>quantum transport (<a href="https://kwant-project.org/install">Kwant</a>,<a href="https://tkwant.kwant-project.org/doc/dev/pre/installation.html">tkwant</a>)</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install tkwant <span class="at">-c</span> conda-forge</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install kwant</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>topological invariant</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install pfapack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>data plotting (<a href="https://pyx-project.org/examples/index.html">pyx</a>)</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install pyx</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install pdf2image</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Install ‘MUMPS’ (optional), using conda environment, <a href="https://anaconda.org/conda-forge/mumps">comda-forge/packages/mumps</a></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-forge::mumps</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-forge/label/cf201901::mumps</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-forge/label/cf202003::mumps</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-forge/label/gcc7::mumps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>if you are failed to install this package, just try the command lines one-by-one.</p>
 </section>
 <section id="submit-tasks-in-batched-and-deal-data-in-one-line-code-way" class="level3">
 <h3 class="anchored" data-anchor-id="submit-tasks-in-batched-and-deal-data-in-one-line-code-way">Submit tasks in batched and deal data in one-line-code way</h3>
 <ul>
-<li><ol type="1">
 <li>setting the workshop folder</li>
-</ol></li>
-<li><ol start="2" type="1">
 <li>generate calculation programs</li>
-</ol></li>
-<li><ol start="3" type="1">
 <li>submit programs</li>
-</ol></li>
-<li><ol start="4" type="1">
 <li>deal data (all tasks finished)</li>
-</ol></li>
 </ul>
 </section>
 </section>
@@ -162,15 +168,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="windows" class="level3">
 <h3 class="anchored" data-anchor-id="windows">Windows</h3>
 <ul>
-<li><ol type="1">
-<li>get the suitable anaconda package</li>
-</ol></li>
-<li><ol start="2" type="1">
+<li>get the suitable anaconda package (i.e., <a href="https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh">anaconda3.8.3</a>)</li>
 <li>install Microsoft C++ environment</li>
-</ol></li>
-<li><ol start="3" type="1">
 <li>install jupyter-notebook editor (recommand vscode)</li>
-</ol></li>
 </ul>
 </section>
 </section>
