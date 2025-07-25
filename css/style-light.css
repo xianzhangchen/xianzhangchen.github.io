@@ -1152,6 +1152,11 @@ header .header-mobile .header-toggle i {
 
 
 /*============ 6. Resume Section ============*/
+.cv-buttons {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+}
 
 .resume-section {
     background-color: #FBFBFB;
