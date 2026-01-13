@@ -1,0 +1,170 @@
+/* Home hero (short, background image + glass overlay)
+   Robust version:
+   - Draw background on the element itself (template already uses .banner-section:before)
+   - Provide a dark fallback so text remains readable even if the image URL 404s
+*/
+
+.home-hero{
+  position: relative;
+  overflow: hidden;
+
+  height: auto;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  padding: 54px 0;
+
+  /* Fallback if image fails to load */
+  background-color: #111 !important;
+
+  /* Background image comes from inline CSS variable:
+     style="--home-bg: url(img/slider/xxx.jpg);" */
+  background-image: var(--home-bg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Use the template's banner overlay as the scrim */
+.home-hero.banner-section:before{
+  background-color: rgba(0,0,0,0.01) !important;
+  opacity: 1 !important;
+}
+
+/* Disable older layers (if any remain in the markup/styles) */
+.home-hero::before{ display: none !important; }
+.home-hero-scrim{ display: none !important; }
+
+/* Override template banner positioning for the Home hero */
+.home-hero .banner-content{
+  position: relative !important;
+  top: auto !important;
+  transform: none !important;
+}
+
+.home-hero-content{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.home-glass{
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 26px 22px 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  text-align: center;
+}
+
+.home-avatar{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.55);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+  margin: 0 auto 14px;
+  display: block;
+}
+
+/* Social icons under avatar */
+.home-social{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.home-social li{ display: inline-flex; }
+.home-social a{
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.06);
+}
+.home-social a:hover{ background: rgba(255,255,255,0.12); }
+.home-social i{ font-size: 18px; }
+
+.home-name{
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 38px;
+  letter-spacing: 0.02em;
+}
+
+.home-tagline{
+  margin: 0;
+  color: rgba(255,255,255,0.92);
+}
+
+/* Make sure the animated words are readable on dark background */
+.home-hero .cd-headline.clip .cd-words-wrapper::after{
+  background: rgba(255,255,255,0.85);
+}
+
+/* Footer at the bottom of the main column */
+.site-footer{
+  padding: 26px 0 38px;
+}
+.site-footer .footer-text{
+  margin: 0;
+  font-size: 13px;
+  opacity: .75;
+  text-align: center;
+}
+
+/* =========================
+   Home -> light like other pages
+   ========================= */
+
+/* make Home section a normal light section */
+.home-hero{
+  background: #ffffff !important;
+  min-height: auto !important;
+  padding: 46px 0 30px !important;
+  overflow: visible !important;
+}
+
+/* disable banner dark overlay on home */
+.home-hero.banner-section:before{
+  background: transparent !important;
+}
+
+/* text: switch from white to dark */
+.home-name{
+  color: rgba(0,0,0,.92) !important;
+}
+.home-tagline{
+  color: rgba(0,0,0,.70) !important;
+}
+
+/* info card: slightly darker than page */
+.home-glass{
+  background: rgba(0,0,0,.04) !important;   /* “稍暗一些” */
+  border: 1px solid rgba(0,0,0,.10) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,.06) !important;
+}
+
+/* social icons under avatar -> dark style */
+.home-social a{
+  color: rgba(0,0,0,.68) !important;
+  border: 1px solid rgba(0,0,0,.14) !important;
+  background: rgba(0,0,0,.03) !important;
+}
+.home-social a:hover{
+  background: rgba(0,0,0,.06) !important;
+}
+

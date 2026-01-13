@@ -212,9 +212,10 @@ $(document).ready(function() {
         initMap();
      }
 
-
     /*======== Contact Form Setup ========*/
-    contactFormSetup();
+    if($("#contact-form").length){
+        contactFormSetup();
+    }
 });
 
 

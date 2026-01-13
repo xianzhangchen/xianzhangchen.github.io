@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Blog | X.-Z. CHEN" />
+  <title>Blog | X.-Z. CHEN</title>
+
+  <!-- Site CSS (same as other pages) -->
+  <link rel="stylesheet" href="../css/plugins.css"/>
+  <link rel="stylesheet" href="../css/style-light.css"/>
+  <link id="theme-color" rel="stylesheet" href="../css/yellow-color.css"
+        data-theme-yellow="../css/yellow-color.css"
+        data-theme-academic="../css/academic-color.css"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/layout-tweaks.css"/>
+  <link rel="stylesheet" href="../css/rightbar.css"/>
+  <link rel="stylesheet" href="../css/fast-nav.css"/>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css"/>
+
+  <!--Favicons-->
+  <link rel="shortcut icon" type="image/x-icon" href="../img/faviconxc.png"/>
+
+  <style>
+    /* Blog list spacing (minimal, consistent) */
+    .blog-wrap{ padding-top: 10px; }
+    .blog-card{
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 12px 0;
+      background: #fff;
+    }
+    .blog-card h4{ margin: 0 0 6px; }
+    .blog-card .meta{ opacity: .75; font-size: 12px; margin-bottom: 8px; }
+    .blog-card p{ margin: 0; }
+  </style>
+</head>
+
+<body>
+  <!--Preloader (kept, but fast-nav will keep transitions snappy)-->
+  <div class="preloader">
+    <div class="loader">
+      <h4>X.-Z. CHEN</h4>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+  <!--/preloader-->
+
+  <div id="page">
+    <!--Header Start-->
+    <header>
+      <div class="header-content">
+        <!--Mobile Header-->
+        <div class="header-mobile">
+          <a class="header-toggle"><i class="fas fa-bars"></i></a>
+          <h2>X.-Z. CHEN</h2>
+        </div>
+
+        <!--Main Header-->
+        <div class="header-main">
+          <div class="image-container">
+            <h2 class="header-name">X.-Z. CHEN</h2>
+          </div>
+
+          <!--Nav Menus-->
+          <nav class="nav-menu">
+            <ul>
+              <li><a href="../index.html"><span class="nav-menu-icon"><i class="lnr lnr-home"></i></span>Home</a></li>
+              <li><a href="../about.html"><span class="nav-menu-icon"><i class="lnr lnr-user"></i></span>About Me</a></li>
+              <li><a href="../news.html"><span class="nav-menu-icon"><i class="lnr lnr-pushpin"></i></span>News</a></li>
+              <li><a href="../publications.html"><span class="nav-menu-icon"><i class="lnr lnr-layers"></i></span>Publications</a></li>
+              <li><a class="active" href="index.html"><span class="nav-menu-icon"><i class="lnr lnr-book"></i></span>Blog</a></li>
+              <li><a href="../contact.html"><span class="nav-menu-icon"><i class="lnr lnr-envelope"></i></span>Contact</a></li>
+            </ul>
+          </nav>
+
+          <!--Nav Footer-->
+          <div class="nav-footer"></div>
+        </div>
+      </div>
+    </header>
+    <!--Header End-->
+
+    <!--Main Start-->
+    <div class="site-main" id="main">
+      <section class="about-section pt-page" id="blog">
+        <div class="section-container">
+          <div class="page-heading">
+            <h2>Blog</h2>
+            <span class="icon"><i class="lnr lnr-book"></i></span>
+          </div>
+
+          <div class="blog-wrap">
+            <p style="margin: 0 0 10px;">
+              Posts are written in <b>Markdown</b>. Add/edit files in <code>blog/posts/</code>, and update
+              <code>blog/posts/index.json</code> to publish.
+            </p>
+
+            <div id="blog-list"></div>
+
+            <!-- Friendly note shown only when previewing via file:// -->
+            <div id="blog-local-note" class="alert alert-info" style="display:none; margin-top:12px;">
+              Tip: if you are previewing via <code>file://</code>, run a local server (e.g. <code>python -m http.server</code>)
+              or open this page from GitHub Pages. (Browsers block <code>fetch()</code> for local files.)
+            </div>
+          </div>
+
+          <footer style="margin-top: 24px; padding-top: 10px; border-top: 1px solid rgba(0,0,0,.08);">
+            <small>© 2026 X.-Z. CHEN. All rights reserved.</small>
+          </footer>
+        </div>
+      </section>
+    </div>
+
+    <!--Right Sidebar Start-->
+    <aside class="rightbar">
+      <div class="rightbar-main">
+        <div id="rightbar-content" data-rightbar-src="../data/right_sidebar.html"></div>
+      </div>
+    </aside>
+    <!--Right Sidebar End-->
+  </div>
+
+  <!-- JS -->
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/plugins.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/theme-switcher.js"></script>
+  <script src="../js/rightbar-loader.js"></script>
+  <script src="../js/blog-index.js"></script>
+  <script src="../js/fast-nav.js"></script>
+</body>
+</html>

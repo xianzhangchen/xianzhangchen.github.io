@@ -1,0 +1,119 @@
+/* Publications -> SELECTION carousel overrides
+   - Image-only by default
+   - On hover: show text + ~45% frosted glass overlay
+   - Scoped to #publications to avoid global side effects
+*/
+
+/* Selection container: remove grey background from the old demo CSS */
+#publications .timeline{
+  background: transparent;
+  box-shadow: none;
+}
+
+/* A tidy viewport for the carousel */
+#publications .timeline .swiper-container{
+  height: 420px;
+}
+
+/* Slides: use the existing background-image as the image source */
+#publications .timeline .swiper-slide{
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Repurpose the old dark bubble overlay into a full-cover frosted glass layer */
+#publications .timeline .swiper-slide::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.45); /* ~45% */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 0;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+#publications .timeline .swiper-slide:hover::after,
+#publications .timeline .swiper-slide:focus-within::after{
+  opacity: 1;
+}
+
+/* Text overlay: hidden until hover */
+#publications .timeline .swiper-slide-content{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -10%;
+  width: 100%;
+  max-width: none;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 28px 42px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+
+#publications .timeline .swiper-slide:hover .swiper-slide-content,
+#publications .timeline .swiper-slide:focus-within .swiper-slide-content{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Undo the old "active slide" animations so hover is the ONLY trigger */
+#publications .timeline .timeline-year,
+#publications .timeline .timeline-title,
+#publications .timeline .timeline-text{
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  color: #111;
+}
+
+#publications .timeline .timeline-year{
+  font-style: italic;
+  font-size: 16px;
+  margin: 0 0 10px;
+  color: rgba(17, 17, 17, 0.85);
+}
+
+#publications .timeline .timeline-title{
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+#publications .timeline .timeline-text{
+  font-size: 14px;
+  line-height: 1.45;
+  margin: 0;
+  color: rgba(17, 17, 17, 0.85);
+}
+
+/* Keep navigation arrows subtle */
+#publications .timeline .swiper-button-next,
+#publications .timeline .swiper-button-prev{
+  opacity: .65;
+}
+#publications .timeline .swiper-button-next:hover,
+#publications .timeline .swiper-button-prev:hover{
+  opacity: 1;
+}

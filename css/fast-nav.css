@@ -1,0 +1,7 @@
+/* Very fast page fade (keeps navigation feeling responsive) */
+html{ scroll-behavior: auto; }
+body{
+  opacity: 1;
+  transition: opacity 80ms linear;
+}
+body.page-leave{ opacity: 0.02; }

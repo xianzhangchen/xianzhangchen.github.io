@@ -1,0 +1,51 @@
+/* Right sidebar: editable blocks loaded from data/right_sidebar.html */
+
+/* Hidden on narrow screens (keeps original template's single-column feel) */
+.rightbar{ display:none; }
+
+@media (min-width: 992px){
+  .rightbar{ display:block; }
+
+  .rightbar-main{
+    border-radius: 10px;
+    background: rgba(255,255,255,0.02);
+  }
+
+  /* Sections inside right sidebar (support both class names) */
+  .rightbar-section,
+  .rb-section{
+    padding: 14px 14px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .rightbar-section:last-child,
+  .rb-section:last-child{ border-bottom: none; }
+
+  .rightbar-section h3,
+  .rb-title{
+    font-size: 14px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    opacity: .9;
+  }
+
+  .rightbar-section p,
+  .rightbar-section li,
+  .rb-content p,
+  .rb-content li{
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .rightbar-section img,
+  .rb-section img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 8px 0;
+    display: block;
+  }
+
+  .rightbar-section a,
+  .rb-section a{ text-decoration: underline; }
+}

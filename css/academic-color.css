@@ -1,0 +1,61 @@
+/****************************************************************************
+  Academic theme (additional option)
+  - Navy accent
+  - Times New Roman for English text
+****************************************************************************/
+/* Academic typography */
+body, h1, h2, h3, h4, h5, h6, .header-name, .header-mobile h2{
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+
+:root{
+  --accent: #1a3b5d;
+  --accent-dark: #142f4b;
+}
+
+/* Accent replacements (mirrors yellow-color.css selectors) */
+.header-main .image-container .header-name:before{ background-color: var(--accent); }
+.page-heading h2{ color: var(--accent); }
+.page-heading .icon{ color: var(--accent); }
+.subheading h3{ border-color: var(--accent) !important; }
+.subheading h3:before,
+.subheading h3:after{ background-color: var(--accent); }
+.banner-section h1 span{ color: var(--accent); }
+.banner-section p .cd-words-wrapper b{ border-color: var(--accent) !important; }
+.about-info ul li span.title{ border-color: var(--accent) !important; }
+.btn-main{ border-color: var(--accent) !important; color: var(--accent); }
+.btn-main:after{ background-color: var(--accent); }
+.services .service-item .icon{ color: var(--accent) !important; }
+.testimonial-item .testimonial-content:before{ color: var(--accent) !important; }
+ul.experience li span.line-left,
+ul.education li span.line-left{ background-color: var(--accent) !important; }
+ul.experience li span.line-left:before,
+ul.experience li span.line-left:after,
+ul.education li span.line-left:before,
+ul.education li span.line-left:after{ border-color: var(--accent) !important; }
+ul.experience .content h5,
+ul.education .content h5{ color: var(--accent); }
+.progress .progress-bar{ background-color: var(--accent); }
+.progress .progress-bar:after{ border-bottom-color: var(--accent-dark); }
+.portfolio-section .portfolio-filter ul li.active{ background-color: var(--accent); }
+.portfolio-section .item figure:before{ background-color: var(--accent); }
+.ajax-portfolio-popup .information span.title{ color: var(--accent); }
+.blog-section .blog-item .blog-content .cat{ color: var(--accent); }
+.contact-info .info-item .icon{ color: var(--accent); }
+blockquote{ border-color: var(--accent) !important; }
+.blog-page .blog-heading .cat{ color: var(--accent); }
+
+/* Font (English/overall): Times New Roman */
+body,
+button,
+input,
+textarea,
+select,
+h1,h2,h3,h4,h5,h6,
+.page-heading h2,
+.header-main nav.nav-menu ul li a,
+.banner-section .banner-content h1,
+.banner-section .banner-content p{
+  font-family: "Times New Roman", Times, serif !important;
+}

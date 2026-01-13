@@ -1,0 +1,234 @@
+/* Layout controls for the centered 3-column shell (desktop).
+   Edit the CSS variables below to tune widths/spacing/positions.
+*/
+
+/* Ensure the global page background stays light.
+   Blog pages often have more blank space, which otherwise reveals the
+   template's default dark background from style-light.css. */
+html, body{ background-color: #ffffff !important; }
+
+:root{
+  --sidebar-width: 220px;      /* left & right sidebar width */
+  --sidebar-gap: 18px;         /* gap between columns */
+  --main-max-width: 920px;     /* main content width */
+  --section-pad-x: 28px;       /* main content left/right padding */
+  --sticky-top: 22px;          /* distance from top when sidebars stick */
+  --home-height: 45vh;         /* Home hero height (shorter) */
+}
+
+@media (min-width: 992px){
+  /* Center the 3-column shell */
+  #page{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--sidebar-gap);
+    padding: 18px 16px;
+  }
+
+  /* Left sidebar shell */
+  header{
+    flex: 0 0 var(--sidebar-width);
+    width: var(--sidebar-width);
+    align-self: flex-start;
+  }
+
+  /* Override the template's fixed left sidebar (.header-main) */
+  header .header-main{
+    position: sticky !important;
+    top: var(--sticky-top) !important;
+    left: auto !important;
+    right: auto !important;
+    width: var(--sidebar-width) !important;
+    height: auto !important;
+    /* max-height: calc(100vh - var(--sticky-top) - 24px);
+    overflow: auto; */
+    overflow-x: hidden;
+    border-right: none;
+    border-radius: 10px;
+  }
+
+  /* Don't force the sidebar to be full-height */
+  header .header-main,
+  header .header-content{
+    min-height: 0 !important;
+  }
+
+  /* Hide the mobile header bar on desktop */
+  header .header-mobile{ display: none !important; }
+
+  /* Main column */
+  #main.site-main{
+    flex: 0 0 auto;
+    width: var(--main-max-width);
+    max-width: var(--main-max-width);
+
+    /* Override the template's absolute full-screen page system */
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    perspective: none;
+  }
+
+  /* Make each section flow naturally (no full-screen pages) */
+  #main.site-main .pt-page{
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    height: auto !important;
+    width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    transform: none !important;
+    margin: 0 0 22px;
+  }
+
+  /* Avoid horizontal overflow from wide components */
+  #main.site-main,
+  #main.site-main .pt-page{ overflow-x: hidden !important; }
+
+  #main.site-main img{ max-width: 100%; height: auto; }
+
+  /* Keep sections readable inside the main column */
+  .site-main .pt-page .section-container{
+    max-width: var(--main-max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding-left: var(--section-pad-x);
+    padding-right: var(--section-pad-x);
+    box-sizing: border-box;
+  }
+
+  /* Bootstrap rows can cause tiny overflows; constrain them */
+  .site-main .pt-page .section-container .row{ max-width: 100%; }
+
+  /* Swiper / timeline should never exceed the main column */
+  .swiper-container,
+  .VivaTimeline{ max-width: 100%; }
+
+  /* Right sidebar */
+  .rightbar{
+    position: sticky;
+    top: var(--sticky-top);
+    width: var(--sidebar-width);
+    align-self: flex-start;
+  }
+  .rightbar-main{
+    /* max-height: calc(100vh - var(--sticky-top) - 24px);
+    overflow: auto; */
+  }
+}
+
+/* Safety: prevent accidental horizontal scroll */
+html, body{ overflow-x: hidden; }
+
+/* Blog standalone pages keep their own container, but tidy width */
+.blog-shell{ max-width: 980px; }
+
+
+/* Disable template full-screen page system globally for multi-page build */
+.pt-perspective, .pt-wrapper{
+  position: relative !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+#main.site-main{
+  position: relative !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+#main.site-main .pt-page{
+  position: relative !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+#page-preloader{ display:none !important; }
+
+/* =========================
+   Light sidebar (override)
+   ========================= */
+.header-main{
+  background: #f6f7f9 !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06) !important;
+}
+
+/* menu separators */
+.header-main .header-menu li{
+  border-top: 1px solid rgba(0,0,0,.06) !important;
+}
+
+/* text & icons */
+.header-main, 
+.header-main a,
+.header-main .header-name,
+.header-main .header-menu li a{
+  color: rgba(0,0,0,.78) !important;
+}
+
+.header-main .header-menu li a:hover,
+.header-main .header-menu li.active a{
+  background: rgba(0,0,0,.05) !important;
+  color: rgba(0,0,0,.92) !important;
+}
+
+/* icon color (font-awesome / svg) */
+.header-main i,
+.header-main svg{
+  color: rgba(0,0,0,.62) !important;
+}
+
+
+/* ===============================
+   FINAL: remove ALL inner scrollbars
+   =============================== */
+
+/* browser should scroll, not inner panels */
+html, body{
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* main full-page system -> natural flow */
+.site-main,
+#main.site-main,
+.pt-perspective,
+.pt-wrapper{
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow-y: visible !important;
+  overflow-x: hidden !important;
+}
+
+/* pages should NOT be scroll containers */
+.site-main .pt-page,
+#main.site-main .pt-page{
+  position: relative !important;
+  height: auto !important;
+  min-height: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow-y: visible !important;
+  overflow-x: hidden !important;
+  transform: none !important;
+}
+
+/* sidebars should NOT be scroll containers */
+header .header-main,
+.rightbar-main{
+  height: auto !important;
+  max-height: none !important;
+  overflow-y: visible !important;
+  overflow-x: hidden !important;
+}
+
+
