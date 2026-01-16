@@ -54,12 +54,23 @@
     "excerpt": "Edit this post in:"
   },
   {
-    "slug": "pyx-publication-ready",
+    // "slug": "pyx-publication-ready",
     "title": "Publication-ready package -- PyX",
     "date": "2024-04-22",
     "category": "Scientific Tools",
     "tags": "",
     "source": "https://zhoueit.github.io/2024/04/22/ke-yan-zuo-tu/",
     "excerpt": "Edit this post in:"
+  },
+  {
+    "title": "Vim and Iterm setting for Mac",
+    "date": "2026-01-17",
+    "category": "Scientific Tools",
+    "tags": "",
+    "url": "posts/vim_iterm_setting.html",
+    "type": "html",
+    "excerpt": "Edit this post in:"
   }
+
+
 ]
