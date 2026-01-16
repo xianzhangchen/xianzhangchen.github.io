@@ -54,7 +54,9 @@
       return;
     }
 
-    var url = 'blog/posts/' + encodeURIComponent(slug) + '.md';
+    var postBase = 'blog/posts/';
+
+    var url = postBase + encodeURIComponent(slug) + '.md';
 
     fetch(url, { cache: 'no-cache' })
       .then(function(resp){
@@ -74,10 +76,37 @@
         if(meta.tags) metaParts.push(escapeHtml(meta.tags));
         if(meta.source) metaParts.push('<a href="' + escapeHtml(meta.source) + '" target="_blank" rel="noopener">source</a>');
         setHtml('post-meta', metaParts.join(' · '));
+        // Render markdown to HTML
+        var html = null;
+        if (window.MarkdownLite && typeof window.MarkdownLite.parse === 'function') {
+          html = window.MarkdownLite.parse(body);
+        } else if (window.renderMarkdown) {
+          html = window.renderMarkdown(body);
+        } else {
+          html = '<pre>' + escapeHtml(body) + '</pre>';
+        }
 
-        // markdown-lite.js provides window.renderMarkdown(markdown)
-        var html = (window.renderMarkdown ? window.renderMarkdown(body) : '<pre>' + escapeHtml(body) + '</pre>');
         setHtml('post-body', html);
+
+        // Fix relative links/images inside the post (so images in blog/posts/... work)
+        var container = document.getElementById('post-body');
+        if (container) {
+          var isRelative = function(u){
+            if(!u) return false;
+            // ignore anchors and absolute URLs
+            return !(/^(?:[a-zA-Z][a-zA-Z0-9+.-]*:|\/\/|#|\/)/.test(u));
+          };
+
+          container.querySelectorAll('img[src]').forEach(function(img){
+            var src = img.getAttribute('src');
+            if (isRelative(src)) img.setAttribute('src', postBase + src);
+          });
+
+          container.querySelectorAll('a[href]').forEach(function(a){
+            var href = a.getAttribute('href');
+            if (isRelative(href)) a.setAttribute('href', postBase + href);
+          });
+        }
       })
       .catch(function(err){
         setText('post-title', 'Failed to load post');

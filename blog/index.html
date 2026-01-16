@@ -37,6 +37,21 @@
     .blog-card h4{ margin: 0 0 6px; }
     .blog-card .meta{ opacity: .75; font-size: 12px; margin-bottom: 8px; }
     .blog-card p{ margin: 0; }
+    .post-badge{
+      display: inline-block;
+      margin-left: 10px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: .06em;
+      vertical-align: middle;
+      border: 1px solid rgba(0,0,0,.12);
+      background: rgba(0,0,0,.03);
+      color: rgba(0,0,0,.72);
+    }
+    .post-badge-pdf{ background: rgba(255, 193, 7, .14); }
+    .post-badge-html{ background: rgba(13, 110, 253, .10); }
+    .post-badge-link{ background: rgba(25, 135, 84, .10); }
   </style>
 </head>
 
@@ -96,7 +111,7 @@
 
           <div class="blog-wrap">
             <p style="margin: 0 0 10px;">
-              Posts are written in <b>Markdown</b>. Add/edit files in <code>blog/posts/</code>, and update
+              Posts can be <b>Markdown</b> (rendered on-page) or direct links to <b>HTML/PDF</b>. Add/edit files in <code>blog/posts/</code>, and update
               <code>blog/posts/index.json</code> to publish.
             </p>
 

@@ -1,0 +1,114 @@
+/* Blog typography - clean academic reading styles */
+
+/* Scope to the blog post page so we don't affect other pages */
+#blog-post .section-container{
+  max-width: 860px;
+}
+
+#blog-post .post-nav a{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,.18);
+}
+#blog-post .post-nav a:hover{
+  border-bottom-color: rgba(0,0,0,.45);
+}
+
+#blog-post .post-title{
+  font-size: 34px;
+  line-height: 1.15;
+  margin: 8px 0 6px;
+}
+
+#blog-post .post-meta{
+  font-size: 13px;
+  opacity: .72;
+  margin: 6px 0 18px;
+}
+
+#blog-post .post-body{
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(0,0,0,.86);
+}
+
+#blog-post .post-body p{
+  margin: 0 0 14px;
+}
+
+#blog-post .post-body h1,
+#blog-post .post-body h2,
+#blog-post .post-body h3,
+#blog-post .post-body h4,
+#blog-post .post-body h5,
+#blog-post .post-body h6{
+  margin: 26px 0 12px;
+  line-height: 1.25;
+}
+
+#blog-post .post-body h1{ font-size: 30px; }
+#blog-post .post-body h2{ font-size: 24px; }
+#blog-post .post-body h3{ font-size: 20px; }
+#blog-post .post-body h4{ font-size: 18px; }
+#blog-post .post-body h5{ font-size: 16px; }
+#blog-post .post-body h6{ font-size: 15px; opacity: .85; }
+
+#blog-post .post-body ul,
+#blog-post .post-body ol{
+  margin: 0 0 14px 22px;
+}
+#blog-post .post-body li{ margin: 6px 0; }
+
+#blog-post .post-body blockquote{
+  margin: 16px 0;
+  padding: 12px 14px;
+  border-left: 3px solid rgba(0,0,0,.18);
+  background: rgba(0,0,0,.03);
+}
+
+#blog-post .post-body hr{
+  border: none;
+  border-top: 1px solid rgba(0,0,0,.12);
+  margin: 18px 0;
+}
+
+#blog-post .post-body code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: .92em;
+  background: rgba(0,0,0,.04);
+  padding: 0.12em 0.35em;
+  border-radius: 6px;
+}
+
+#blog-post .post-body pre{
+  background: rgba(0,0,0,.04);
+  padding: 14px 16px;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin: 0 0 16px;
+}
+#blog-post .post-body pre code{
+  background: transparent;
+  padding: 0;
+}
+
+#blog-post .post-body img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+#blog-post .post-body table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 18px;
+}
+#blog-post .post-body th,
+#blog-post .post-body td{
+  border: 1px solid rgba(0,0,0,.12);
+  padding: 8px 10px;
+  vertical-align: top;
+}
+#blog-post .post-body th{
+  background: rgba(0,0,0,.03);
+}

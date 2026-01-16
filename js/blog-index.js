@@ -20,7 +20,7 @@
     return href;
   }
 
-  function render(items){
+    function render(items){
     var mount = document.getElementById('blog-list');
     if(!mount) return;
 
@@ -29,20 +29,53 @@
       return;
     }
 
+    function inferType(item){
+      var t = (item.type || '').toLowerCase();
+      if(t) return t;
+      var u = (item.url || '').toLowerCase();
+      if(u.endsWith('.pdf')) return 'pdf';
+      if(u.endsWith('.html') || u.endsWith('.htm')) return 'html';
+      if(u) return 'link';
+      return 'md';
+    }
+
+    function isExternal(u){
+      return /^https?:\/\//i.test(u || '');
+    }
+
+    function buildLink(item){
+      var slug = (item.slug || '').trim();
+      var u = (item.url || '').trim();
+      if(u){
+        return { href: esc(u), newTab: (inferType(item)==='pdf' || isExternal(u)) };
+      }
+      return { href: '../blog-post.html?p=' + encodeURIComponent(slug), newTab: false };
+    }
+
     mount.innerHTML = items.map(function(item){
       var slug = esc(item.slug || '');
       var title = esc(item.title || slug || 'Untitled');
       var date = item.date ? esc(item.date) : '';
-      var tags = Array.isArray(item.tags) ? item.tags.map(esc).join(', ') : '';
+      var category = item.category ? esc(item.category) : '';
+      var tags = '';
+      if (Array.isArray(item.tags)) tags = item.tags.map(esc).join(', ');
+      else if (typeof item.tags === 'string' && item.tags.trim()) tags = esc(item.tags);
       var excerpt = esc(item.excerpt || '');
 
       var meta = [];
       if(date) meta.push(date);
+      if(category) meta.push(category);
       if(tags) meta.push(tags);
+
+      var t = inferType(item);
+      var badge = (t && t !== 'md') ? ('<span class="post-badge post-badge-' + esc(t) + '">' + esc(t.toUpperCase()) + '</span>') : '';
+
+      var link = buildLink(item);
+      var target = link.newTab ? ' target="_blank" rel="noopener"' : '';
 
       return (
         '<div class="blog-card">' +
-          '<h4><a href="../blog-post.html?p=' + encodeURIComponent(slug) + '">' + title + '</a></h4>' +
+          '<h4><a href="' + link.href + '"' + target + '>' + title + '</a>' + badge + '</h4>' +
           (meta.length ? '<div class="meta">' + meta.join(' · ') + '</div>' : '') +
           (excerpt ? '<p>' + excerpt + '</p>' : '') +
         '</div>'

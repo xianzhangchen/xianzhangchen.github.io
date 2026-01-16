@@ -191,5 +191,11 @@
     return html;
   }
 
+  // Public API
   window.MarkdownLite = { parse };
+  // Backward/compat alias used by older blog-post.js implementations.
+  // If a page expects window.renderMarkdown(markdown), provide it.
+  if (!window.renderMarkdown) {
+    window.renderMarkdown = parse;
+  }
 })();
