@@ -1,0 +1,144 @@
+/* Small visual adjustments for News page only */
+#news .section-container{
+  position: relative;
+}
+
+#news .container-fluid{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#news .VivaTimeline{
+  width: 100%;
+  max-width: 100%;
+}
+
+#news .VivaTimeline dl{
+  position: relative;
+}
+
+#news .VivaTimeline dl:before{
+  left: 51% !important;
+  margin-left: -1px !important;
+}
+
+#news .VivaTimeline dl dd .circ{
+  left: 51% !important;
+  margin-left: -11px !important;
+}
+
+#news .VivaTimeline dl dd .time{
+  top: 31px;
+}
+
+#news .VivaTimeline dl dd.pos-left .time{
+  left: calc(51% + 18px) !important;
+  margin-left: 0 !important;
+  text-align: left !important;
+}
+
+#news .VivaTimeline dl dd.pos-right .time{
+  left: auto !important;
+  right: calc(49% + 18px) !important;
+  margin-left: 0 !important;
+  text-align: right !important;
+}
+
+#news .VivaTimeline dl dd .events{
+  width: 45% !important;
+  margin-top: 31px;
+}
+
+#news .VivaTimeline dl dd.pos-left .events{
+  float: left;
+  margin-right: 1.5% !important;
+}
+
+#news .VivaTimeline dl dd.pos-right .events{
+  float: right;
+  margin-left: 5% !important;
+}
+
+#news .VivaTimeline dl dd .events .events-header{
+  padding: 12px 20px 10px !important;
+  line-height: 1.45 !important;
+}
+
+#news .VivaTimeline dl dd .events .events-body{
+  padding: 14px 8px 14px 10px !important;
+}
+
+#news .VivaTimeline dl dd .events .events-body .row{
+  display: flex !important;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+#news .VivaTimeline dl dd .events .events-body .col-md-6{
+  width: auto !important;
+  float: none !important;
+  flex: 0 0 auto;
+  max-width: 42%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#news .VivaTimeline dl dd .events .events-body .events-desc{
+  flex: 1 1 0;
+  padding: 0 !important;
+  text-indent: 0 !important;
+  text-align: justify !important;
+  line-height: 1.8;
+}
+
+#news .VivaTimeline dl dd .events .events-object{
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 767px){
+  #news .VivaTimeline dl:before{
+    left: 90px !important;
+  }
+
+  #news .VivaTimeline dl dd .circ{
+    left: 90px !important;
+  }
+
+  #news .VivaTimeline dl dd .time,
+  #news .VivaTimeline dl dd.pos-left .time,
+  #news .VivaTimeline dl dd.pos-right .time{
+    left: 20px !important;
+    right: auto !important;
+    text-align: left !important;
+  }
+
+  #news .VivaTimeline dl dd .events,
+  #news .VivaTimeline dl dd.pos-left .events,
+  #news .VivaTimeline dl dd.pos-right .events{
+    width: 73% !important;
+    float: right !important;
+    margin-left: 0 !important;
+    margin-right: 4% !important;
+  }
+
+  #news .VivaTimeline dl dd .events .events-body .row{
+    display: block !important;
+  }
+
+  #news .VivaTimeline dl dd .events .events-body .col-md-6{
+    max-width: 100%;
+    width: 100% !important;
+    margin-bottom: 12px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  #news .VivaTimeline dl dd .events,
+  #news .VivaTimeline dl dd.pos-left .events,
+  #news .VivaTimeline dl dd.pos-right .events{
+    width: 63% !important;
+  }
+}
