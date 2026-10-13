@@ -1,0 +1,706 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+img:not([height]) { height: auto; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-width: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+svg sub, svg sup { position: static; }
+.nodeLabel p { padding-right: 2px; padding-left: 2px; }
+.typora-export .nodeLabel p { padding-right: 0px; padding-left: 0px; }
+foreignObject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; position: relative; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&amp;subset=latin-ext' type='text/css' />
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:900,300&amp;subset=latin-ext' type='text/css' />
+<style type='text/css'  id="style-theme_css">@include-when-export url(https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext);
+
+:root {
+	--control-text-color: #777;
+}
+
+/**
+ * forked from pixyll.com
+ * MIT license
+ */
+
+h1,
+.h1,
+.f1 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+h2,
+.h2,
+.f2 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+h3,
+.h3,
+.f3 {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+}
+p,
+.p,
+.f4,
+h4,
+h5,
+h6,
+dl,
+ol,
+ul,
+pre[cid],
+div[cid],
+#typora-source {
+	font-size: 1.125rem;
+	line-height: 1.5rem;
+}
+
+h4 {
+	font-size: 1.13rem;
+}
+/*
+ Pixyll
+ A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
+ Best served with BASSCSS (http://jxnblk.github.io/basscss)
+ Crafted with <3 by John Otander (@4lpine) - ©2015 John Otander MIT License http://opensource.org/licenses/MIT
+
+*/
+
+body {
+	font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", "STSong", 'Segoe UI Emoji','SF Pro', Serif;
+	line-height: 1.5rem;
+	font-weight: 400;
+}
+
+#write {
+	max-width: 914px;
+	color: #333;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+@media only screen and (min-width: 1700px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+}
+body {
+	font-size: 1.5rem;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.ty-table-edit {
+	background: #ededed;
+}
+
+table {
+	width: 100%;
+	font-size: 1.125rem;
+}
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td,
+table > tfoot > tr > th,
+table > tfoot > tr > td {
+	padding: 12px;
+	line-height: 1.2;
+	vertical-align: top;
+	border-top: 1px solid #333;
+}
+table > thead > tr > th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #333;
+}
+table > caption + thead > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > th,
+table > thead:first-child > tr:first-child > td {
+	border-top: 0;
+}
+table > tbody + tbody {
+	border-top: 2px solid #333;
+}
+p {
+	font-weight: 300;
+	line-height: 1.5;
+}
+abbr {
+	border-bottom: 1px black dotted;
+	cursor: help;
+}
+pre,
+code {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+code,
+.md-fences  {
+	color: #7a7a7a;
+}
+
+.md-fences {
+	padding: 1.125em;
+	margin-bottom: 0.88em;
+	font-size: 1rem;
+	border: 1px solid #7a7a7a;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+}
+
+blockquote {
+	padding: 1.33em;
+	font-style: italic;
+	border-left: 5px solid #7a7a7a;
+	color: #555;
+}
+blockquote em {
+	color: #000;
+}
+blockquote footer {
+	font-size: .85rem;
+	font-style: normal;
+	background-color: #fff;
+	color: #7a7a7a;
+	border-color: transparent;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 1em 0 0.5em;
+}
+@media screen and (min-width: 48em) {
+	.h1,
+	h1 {
+		font-size: 3.250rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.298rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.625rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+	#write>h4.md-focus:before,
+	#write>h5.md-focus:before,
+	#write>h6.md-focus:before{
+		top: 1px;
+	}
+	.p,
+	p,
+	li {
+		font-size: 1.25rem;
+		line-height: 1.8;
+	}
+	table {
+		font-size: 1.25rem;
+	}
+}
+@media (max-width: 48em) {
+	blockquote {
+		margin-left: 1rem;
+		margin-right: 0;
+		padding: 0.5em;
+	}
+	.h1,
+	h1 {
+		font-size: 2.827rem;
+	}
+	.h2,
+	h2 {
+		font-size: 1.999rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.413rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+}
+@media screen and (min-width: 64em) {
+	.h1,
+	h1 {
+		font-size: 4.498rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.29rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.9rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.591rem;
+	}
+	#write>h4.md-focus:before{
+		top:4px;
+	}
+}
+a {
+	color: #463F5C;
+	text-decoration: underline;
+}
+
+#write {
+	padding-top: 2rem;
+}
+
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+	white-space: pre;
+	border: 0px;
+
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+	width: 100vw;
+	max-width: calc(100% + 60px);
+
+	margin-left: -30px;
+	margin-bottom: 2em;
+	margin-top: -2010px;
+	padding-top: 2000px;
+	padding-bottom: 10px;
+	line-height: 1.5em;
+	color: #7a7a7a;
+	background-color: #fafafa;
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: 300;
+	clear: both;
+	padding-left: 0;
+	font-size:1.125rem;
+}
+.md-image>.md-meta {
+	color: #463F5C
+}
+.footnotes {
+	font-size:1.1rem;
+}
+.md-tag {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+}
+.code-tooltip {
+	background: white;
+}
+.code-tooltip-content {
+	font-size: 1.1rem;
+}
+
+.task-list{
+	padding-left: 0;
+}
+
+.md-task-list-item {
+	padding-left:34px;
+}
+
+.md-task-list-item > input{
+	width: 1.25rem;
+	height: 1.25rem;
+	display: block;
+	-webkit-appearance: initial;
+	top: -0.2rem;
+	margin-left: -1.6em;
+	margin-top: calc(1rem - 7px);
+	border: none;
+}
+
+.md-task-list-item > input:focus{
+	outline: none;
+	box-shadow: none;
+}
+
+.md-task-list-item > input:before{
+	border: 1px solid #555;
+	border-radius: 1.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: #fff;
+	content: ' ';
+	transition: background-color 200ms ease-in-out;
+	display: block;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	background: #333;
+	border-width: 2px;
+	display:inline-block;
+	transition: background-color 200ms ease-in-out;
+}
+
+.md-task-list-item > input:checked:after,
+.md-task-list-item > input[checked]:after {
+	opacity: 1;
+}
+
+.md-task-list-item > input:after {
+	opacity: 1;
+	-webkit-transition: opacity 0.05s ease-in-out;
+	-moz-transition: opacity 0.05s ease-in-out;
+	transition: opacity 0.05s ease-in-out;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	position: absolute;
+	top: 0.4375rem;
+	left: 0.28125rem;
+	width: 0.9375rem;
+	height: 0.5rem;
+	border: 3px solid #fff;
+	border-top: 0;
+	border-right: 0;
+	content: ' ';
+	opacity: 0;
+}
+
+.md-tag {
+	color:inherit;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+#typora-sidebar {
+	font-size:1rem !important;
+}
+
+.html-for-mac #typora-sidebar {
+	background-color:white;
+}
+
+.outline-content li, .outline-content ul {
+	font-size:1rem !important;
+}
+
+.outline-title {
+	line-height: inherit;
+	margin-top: 10px;
+}
+
+.outline-expander {
+	width: 18px;
+}
+
+.outline-expander:before {
+ 	content: "+";
+	font-family: inherit;
+	color: rgb(108, 108, 108); 
+  font-size: 1.5rem;
+ 	top: -0.1rem;
+}
+
+.outline-expander:hover:before {
+	content: "+";
+}
+
+.outline-item-open>.outline-item>.outline-expander:before{
+	content: "-";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.os-windows #typora-source {
+	font-family: inherit;
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.md-diagram-panel {
+	margin-top: 24px;
+	margin-left: -1.2em;
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -3.4em;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+li {
+	margin: 0.5rem 0;
+}
+
+li > *:last-child {
+	margin-bottom: 0;
+}</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+<style type='text/css'  id="style-mac-print"> @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}</style>
+
+<title>AM_SC_全部主题文献表</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='am--sc-junction-与近邻平台全部主题文献表'><span>AM–SC junction 与近邻平台：全部主题文献表</span></h1><p><span>共 58 条文献：A 部分 20 条，其余 B–G 与综述入口 R 共 38 条。沿用原清单编号；主时间窗口为 2023-10-12 至 2026-10-12，另收录四篇窗口外经典工作。表格整理与重点结构核对日期：2026-10-13。</span></p><p><span>各篇占三行：首行为期刊、卷、页码/文章号、年份及蓝色结类型；第二行为完整题目；第三行为研究内容。预印本以 arXiv 编号标明，不填写未确认的期刊卷页。F、G 与 R 中的平台、理论框架和综述范围保留其实际性质。</span></p><h2 id='主题索引'><span>主题索引</span></h2><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>主题</span></th><th style='text-align:left;' ><span>内容</span></th><th style='text-align:right;' ><span>条目数</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>A</span></td><td style='text-align:left;' ><span>Josephson 结、ABS 与 CPR</span></td><td style='text-align:right;' ><span>20</span></td></tr><tr><td style='text-align:left;' ><span>B</span></td><td style='text-align:left;' ><span>Andreev 反射与非局域输运</span></td><td style='text-align:right;' ><span>11</span></td></tr><tr><td style='text-align:left;' ><span>C</span></td><td style='text-align:left;' ><span>实验工作</span></td><td style='text-align:right;' ><span>5</span></td></tr><tr><td style='text-align:left;' ><span>D</span></td><td style='text-align:left;' ><span>热电效应与隧穿</span></td><td style='text-align:right;' ><span>2</span></td></tr><tr><td style='text-align:left;' ><span>E</span></td><td style='text-align:left;' ><span>其他近期预印本</span></td><td style='text-align:right;' ><span>6</span></td></tr><tr><td style='text-align:left;' ><span>F</span></td><td style='text-align:left;' ><span>近邻效应与输运理论框架</span></td><td style='text-align:right;' ><span>7</span></td></tr><tr><td style='text-align:left;' ><span>G</span></td><td style='text-align:left;' ><span>拓扑异质结构支撑</span></td><td style='text-align:right;' ><span>5</span></td></tr><tr><td style='text-align:left;' ><span>R</span></td><td style='text-align:left;' ><span>综述入口</span></td><td style='text-align:right;' ><span>2</span></td></tr></tbody></table></figure><hr /><h2 id='a｜josephson-结andreev-束缚态与电流--相位关系'><span>A｜Josephson 结、Andreev 束缚态与电流–相位关系</span></h2><p><span>沿用原清单的 A01–A18，并加入主时间窗口（2023-10-12 至 2026-10-12）以前的 H01–H02 两篇经典工作，共 20 篇。书目与结结构核对日期：2026-10-13。</span></p><p><span>每篇占三行：首行给出期刊、卷、页码/文章号、年份和结类型；第二行给出完整原文题目；第三行简述研究内容。结类型标为蓝色，AM、SC 缩写统一用于结类型，论文题目保持正式版本。</span></p><h3 id='2023｜窗口外经典文献'><span>2023｜窗口外经典文献</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目</span></th><th style='text-align:left;' ><span>Junction 类型</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>H01†</span></td><td style='text-align:left;' ><em><span>Phys. Rev. Lett.</span></em><span> </span><strong><span>131</span></strong><span>, 076003 (2023)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM / s-wave SC</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>dc Josephson Effect in Altermagnets</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>证明零净磁化的 AM 也能诱导 0–π 振荡，其衰减与周期由晶向控制。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>H02†</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>108</span></strong><span>, 075425 (2023)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM / s-wave SC (short junction)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Phase-shifted Andreev levels in an altermagnet Josephson junction</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>解析 AM 引起的自旋相关 ABS 相移，并计算 Josephson 能量与超流。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2024'><span>2024</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目</span></th><th style='text-align:left;' ><span>Junction 类型</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>A01</span></td><td style='text-align:left;' ><em><span>Nat. Commun.</span></em><span> </span><strong><span>15</span></strong><span>, 1801 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM / s-wave SC (planar)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Finite-momentum Cooper pairing in proximitized altermagnets</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>发现近邻 AM 中的有限动量 Cooper 配对，解释 0–π 转变及异常 Fraunhofer 图样。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A02</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>109</span></strong><span>, 024517 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>singlet SC / AM / triplet SC</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Orientation-dependent Josephson effect in spin-singlet superconductor/altermagnet/spin-triplet superconductor junctions</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>给出晶向与配对类型决定的一阶 Josephson 耦合选择规则，并分析 φ0 相位与 0–π 转变。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A03</span></td><td style='text-align:left;' ><em><span>Phys. Rev. Lett.</span></em><span> </span><strong><span>133</span></strong><span>, 226002 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM / s-wave SC</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>φ Josephson Junction Induced by Altermagnetism</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>揭示 AM 可产生双简并 φ 基态与多节点 CPR，并给出取向和长度的调控规律。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A04</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>110</span></strong><span>, 014518 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>(AM + s-wave SC) / N / (AM + s-wave SC) (Rashba SOC)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Field-free Josephson diode effect in altermagnet/normal metal/altermagnet junctions</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用两侧 AM 电极的相对晶向与 Rashba SOC，实现无外场 Josephson 二极管。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A05</span></td><td style='text-align:left;' ><em><span>EPL</span></em><span> </span><strong><span>148</span></strong><span>, 56003 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM / s-wave SC (SOC)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Anomalous Josephson effect in altermagnet</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>研究 SOC 与 AM 共同产生的异常 Josephson 电流，以及可调的 0–π 转变。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2025'><span>2025</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目</span></th><th style='text-align:left;' ><span>Junction 类型</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>A06*</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>111</span></strong><span>, 064502 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM / s-wave SC (d-wave AM)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Josephson effect and odd-frequency pairing in superconducting junctions with unconventional magnets</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>比较 d 波 AM 与 p 波磁体结中的 ABS、CPR 和奇频配对（另见勘误）。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A07</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>111</span></strong><span>, 165406 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM / s-wave SC (planar)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Tunable second harmonic in altermagnetic Josephson junctions</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>通过电栅与 Zeeman 场调控 CPR 第二谐波、偏斜及 0–π 转变。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A08</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>111</span></strong><span>, 184515 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>d-wave SC / AM / d-wave SC; N / AM / d-wave SC</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Orientation-dependent transport in junctions formed by d-wave altermagnets and d-wave superconductors</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>研究晶向依赖的 de Gennes–Saint-James 态、亚隙电导和非常规 Josephson CPR。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A09</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>111</span></strong><span>, 214515 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM / d-wave SC; d-wave SC / AM / d-wave SC</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Andreev bound states and supercurrent in an unconventional superconductor-altermagnet Josephson junction</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>比较 s/d 波与 d/d 波电极组合，分析取向依赖的 ABS 与非正弦超流。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A10</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>112</span></strong><span>, 054505 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>Ising SC / AM / Ising SC</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Field-free Josephson diode effect in an Ising-superconductor/altermagnet/Ising-superconductor Josephson junction</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>研究 Ising SC 电极与 AM 晶向对无外场 Josephson 二极管效应的调控。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A11</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>112</span></strong><span>, 104506 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>singlet SC / AM / triplet SC (Rashba SOC)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Tunable Josephson diode effect in singlet superconductor-altermagnet-triplet superconductor junctions</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>在单重态–AM–三重态结中实现栅压可调的无外场 Josephson 二极管效应。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A12</span></td><td style='text-align:left;' ><em><span>Chin. Phys. B</span></em><span> </span><strong><span>34</span></strong><span>, 107803 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>(AM + s-wave SC) / AM / (AM + s-wave SC) (planar; Rashba SOC)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Josephson diode effect in altermagnet-based s-wave superconductor junction</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用 AM 晶向与非对称栅压调控平面结的二极管效率及极性。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A13</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>112</span></strong><span>, L201408 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>RNW(AM + s-wave SC) / weak link / RNW(AM + s-wave SC) (Floquet)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Josephson current signature of Floquet Majorana and topological accidental zero modes in altermagnet heterostructures</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>研究驱动诱导的 Floquet Majorana 模，并比较拓扑与平庸零模的超流周期性。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2026'><span>2026</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目</span></th><th style='text-align:left;' ><span>Junction 类型</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>A14</span></td><td style='text-align:left;' ><em><span>Phys. Rev. Lett.</span></em><span> </span><strong><span>136</span></strong><span>, 116701 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM / s-wave SC (nodeless AM)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Spin-Polarized Josephson Supercurrent in Nodeless Altermagnets</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用无节点 AM 的自旋–谷锁定实现纯三重态超流，并通过界面调控 0–π 转变。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A15</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>113</span></strong><span>, 214514 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>triplet SC / AM / triplet SC</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Josephson effects in the spin-triplet superconductor/altermagnet/spin-triplet superconductor junctions: The detection of the intrinsic d-vector</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用取向依赖的 CPR 和临界电流，探测三重态 SC 的内禀 d 矢量。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A16</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>114</span></strong><span>, 074503 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>SC / AM / SC (non-Hermitian; Rashba SOC)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Orientation-dependent exceptional points in non-Hermitian altermagnetic Josephson junctions</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>研究 AM 晶向、Rashba SOC 与非厄米强度对 ABS 非厄米简并点的调控。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A17</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>114</span></strong><span>, 225408 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM / s-wave SC (semiconductor nanowire)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Magnetic-field-free parity-protected qubit based on a narrow altermagnet Josephson junction</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>分析窄结中自旋劈裂与横向模式混合，提出无磁场宇称保护超导量子比特。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>A18</span></td><td style='text-align:left;' ><em><span>npj Quantum Mater.</span></em><span> </span><strong><span>11</span></strong><span>, 45 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM / s-wave SC (Rashba 2DEG)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Topological altermagnetic Josephson junctions</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用 Rashba 2DEG 上的 AM 弱连接构建零外场拓扑结，产生端点 MZM。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='符号与注释'><span>符号与注释</span></h3><ul><li><p><span>AM：altermagnet；SC：superconductor；N：normal metal。</span></p></li><li><p><span>RNW：Rashba nanowire；SOC：spin–orbit coupling；2DEG：two-dimensional electron gas。</span></p></li><li><p><span>ABS：Andreev bound states；CPR：current–phase relation；MZM：Majorana zero mode。</span></p></li><li><p><span>s-wave / d-wave 修饰 SC 时表示超导配对对称性；singlet / triplet 表示自旋单重态 / 三重态。AM 的 d-wave 标签描述磁性自旋劈裂的角向结构。</span></p></li><li><p><span>(AM + SC) 表示 AM 区域具有近邻诱导超导配对；RNW(AM + SC) 表示同时接受 AM 与 SC 近邻作用的纳米线。</span></p></li><li><p><span>† H01–H02 是时间窗口以前的 Josephson 奠基工作；原清单 H03–H04 讨论单界面 Andreev 反射，留待 B 部分。</span></p></li><li><ul><li><p><span>A06 有勘误：</span><em><span>Phys. Rev. B</span></em><span> </span><strong><span>113</span></strong><span>, 019901 (2026)，</span><a href='https://doi.org/10.1103/hqh1-md6w'><span>DOI</span></a><span>。</span></p></li></ul></li><li><p><span>A04 的两侧是具有近邻超导配对的 AM 电极，中央为 N；A12 的 AM 与 Rashba SOC 覆盖整个平面结构，SC 配对在接触电极下诱导；A13 是两条 AM–SC 近邻纳米线之间的弱耦合结。</span></p></li><li><p><span>A16 以非厄米 SC/AM/SC 模型记；A17 是半导体纳米线中的 SC 与 AM 近邻分区；A18 以其主要的 s-wave SC / AM / s-wave SC 方案记，文中也讨论 extended s-wave 与 d-wave SC 的推广。</span></p></li><li><p><span>多数“页码”实际为文章号；EPL 的原出版编号为 56003，现 OUP 页面用 DOI 后缀 ad96df 作定位。</span></p></li></ul><h3 id='原文入口'><span>原文入口</span></h3><ul><li><p><strong><span>H01</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevLett.131.076003'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>H02</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.108.075425'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A01</span></strong><span>：</span><a href='https://doi.org/10.1038/s41467-024-45951-3'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A02</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.109.024517'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A03</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevLett.133.226002'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A04</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.110.014518'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A05</span></strong><span>：</span><a href='https://doi.org/10.1209/0295-5075/ad96df'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A06</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.111.064502'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A07</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.111.165406'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A08</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.111.184515'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A09</span></strong><span>：</span><a href='https://doi.org/10.1103/mj4b-2fnr'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A10</span></strong><span>：</span><a href='https://doi.org/10.1103/qzq2-f9kv'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A11</span></strong><span>：</span><a href='https://doi.org/10.1103/yqsg-xdg8'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A12</span></strong><span>：</span><a href='https://doi.org/10.1088/1674-1056/add7aa'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A13</span></strong><span>：</span><a href='https://doi.org/10.1103/prnx-47mk'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A14</span></strong><span>：</span><a href='https://doi.org/10.1103/ds5z-fxy5'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A15</span></strong><span>：</span><a href='https://doi.org/10.1103/zdyn-y6mv'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A16</span></strong><span>：</span><a href='https://doi.org/10.1103/7wps-4ryn'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A17</span></strong><span>：</span><a href='https://doi.org/10.1103/srnr-kn2s'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>A18</span></strong><span>：</span><a href='https://doi.org/10.1038/s41535-026-00874-8'><span>期刊 / DOI</span></a><span>。</span></p></li></ul><h3 id='结结构核对用作者版--全文'><span>结结构核对用作者版 / 全文</span></h3><ul><li><p><span>A04：</span><a href='https://arxiv.org/html/2408.01901v1'><span>arXiv 全文</span></a><span>。</span></p></li><li><p><span>A12：</span><a href='https://www.cpsjournals.cn/en/article/doi/10.1088/1674-1056/add7aa'><span>Chinese Physical Society 期刊全文</span></a><span>。</span></p></li><li><p><span>A13：</span><a href='https://arxiv.org/html/2505.05302v1'><span>arXiv 全文</span></a><span>。</span></p></li><li><p><span>A14：</span><a href='https://arxiv.org/html/2509.13838v1'><span>arXiv 全文</span></a><span>。</span></p></li><li><p><span>A17：</span><a href='https://arxiv.org/html/2510.18145v1'><span>arXiv 作者版</span></a><span>。</span></p></li><li><p><span>A18：</span><a href='https://www.nature.com/articles/s41535-026-00874-8'><span>npj Quantum Materials 全文</span></a><span>。</span></p></li></ul><hr /><h2 id='b｜andreev-反射与非局域输运'><span>B｜Andreev 反射与非局域输运</span></h2><h3 id='2023｜窗口外经典文献-2'><span>2023｜窗口外经典文献</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>H03†</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>108</span></strong><span>, 054511 (2023)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / s-wave SC (interface)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Andreev reflection in altermagnets</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>研究 AM 的动量依赖自旋劈裂如何改变 AR，并给出晶向依赖的界面电导。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>H04†</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>108</span></strong><span>, L060508 (2023)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / s-wave SC (interface / tunnel barrier)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Andreev reflection at the altermagnet-superconductor interface</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>分析费米面取向对 AR、电导与共振态的影响，并讨论非磁无序的取向依赖。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2024-2'><span>2024</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>B01</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>109</span></strong><span>, 245424 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / SC / AM (relative rotation: 90°)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Crossed Andreev reflection in altermagnets</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用两侧 AM 的相对转角抑制电子隧穿、增强 CAR，并计算局域与非局域电导。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>B02</span></td><td style='text-align:left;' ><em><span>J. Phys. D: Appl. Phys.</span></em><span> </span><strong><span>57</span></strong><span>, 395301 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM1 / AM2 / SC</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Orientation-dependent Andreev reflection in an altermagnet/altermagnet/superconductor junction</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>研究两个 AM 区域的晶向如何调控 AR 概率与亚隙电导。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>B03</span></td><td style='text-align:left;' ><em><span>Supercond. Sci. Technol.</span></em><span> </span><strong><span>37</span></strong><span>, 055012 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / SC / AM (electrical control)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Electrically controlled crossed Andreev reflection in altermagnet/superconductor/altermagnet junctions</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>通过化学势与 Néel 矢量调节 CAR 和弹性共隧穿，探索电控 Cooper 对分裂。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2025-2'><span>2025</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>B04</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>111</span></strong><span>, L100507 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / SC (interface / multiterminal transport)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Spin-polarized specular Andreev reflections in altermagnets</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>提出稳定的自旋极化镜面 AR，并讨论自旋分束、Cooper 对分裂及非局域探测。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2026-2'><span>2026</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>B05</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>113</span></strong><span>, 014505 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / (AM + topological SC) / AM</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Quantized crossed Andreev reflection in altermagnet/altermagnet topological superconductor/altermagnet heterojunction</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用中央拓扑区域的手性 Majorana 边缘态，获得 CAR 与透射的量子化平台。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>B06</span></td><td style='text-align:left;' ><em><span>Phys. Lett. A</span></em><span> </span><strong><span>570</span></strong><span>, 131285 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>N / AM / SC</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Andreev reflection in normal metal/altermagnet/superconductor junctions</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>研究 AM 晶向、中间层长度与入射能量对 AR 及界面输运的影响。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>B07</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>114</span></strong><span>, 134513 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>V2O AM / conventional SC (multiorbital model)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Robust realization of spin-polarized specular Andreev reflection in V2O-based altermagnets</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>用 V2O 基多轨道模型研究准一维费米面带来的自旋极化镜面 AR 及其鲁棒性。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>B08</span></td><td style='text-align:left;' ><em><span>Physica C</span></em><span> </span><strong><span>648</span></strong><span>, 1354899 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM nanoribbon / s-wave SC (impurity / defect)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Andreev reflection in altermagnetic nanoribbons with impurity/defect</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>分析纳米带中的杂质、缺陷与势垒如何改变自旋分辨 AR 和亚隙输运。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>B09</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>113</span></strong><span>, 134502 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>N / nanowire(AM + s-wave SC)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Spin transport in a normal metal–altermagnetic superconducting nanowire junction</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用等自旋 AR 注入三重态 Cooper 对，并研究化学势与自旋偏压对自旋输运的调控。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='注释'><span>注释</span></h3><ul><li><p><span>AM = altermagnet；SC = superconductor；N = normal metal。编号沿用原清单，文章题目保留原文。</span></p></li><li><p><span>(AM + SC) 表示耦合的 AM–SC 近邻平台或同时具有 AM 与超导配对的区域；材料名用于注明具体器件。</span></p></li><li><p><span>s-wave / d-wave 修饰 SC 时表示配对对称性；singlet / triplet 表示自旋单重态 / 三重态。</span></p></li><li><p><span>CAR = crossed Andreev reflection；AR = Andreev reflection。B05 中央为具有超导配对的拓扑 AM 区域。</span></p></li><li><p><span>† H03–H04：发表于 2023-10-12 之前的界面经典工作；B06 按卷期年份列为 2026。</span></p></li></ul><h3 id='原文入口-2'><span>原文入口</span></h3><ul><li><p><strong><span>H03</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.108.054511'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>H04</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.108.L060508'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>B01</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.109.245424'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>B02</span></strong><span>：</span><a href='https://doi.org/10.1088/1361-6463/ad5c72'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>B03</span></strong><span>：</span><a href='https://doi.org/10.1088/1361-6668/ad3f56'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>B04</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.111.L100507'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>B05</span></strong><span>：</span><a href='https://doi.org/10.1103/rv94-djlk'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>B06</span></strong><span>：</span><a href='https://doi.org/10.1016/j.physleta.2025.131285'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>B07</span></strong><span>：</span><a href='https://doi.org/10.1103/311w-d5y1'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>B08</span></strong><span>：</span><a href='https://doi.org/10.1016/j.physc.2026.1354899'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>B09</span></strong><span>：</span><a href='https://doi.org/10.1103/h77q-66fn'><span>期刊 / DOI</span></a><span>。</span></p></li></ul><hr /><h2 id='c｜实验工作'><span>C｜实验工作</span></h2><h3 id='2025-3'><span>2025</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>C01</span></td><td style='text-align:left;' ><em><span>Physica B</span></em><span> </span><strong><span>696</span></strong><span>, 416602 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>SC(In) / AM(MnTe) (candidate; planar interface)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Andreev reflection for MnTe altermagnet candidate</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>测量 In/MnTe 界面的 Andreev 电导，讨论磁序、界面无序与亚隙电导增强。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2026-3'><span>2026</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>C02</span></td><td style='text-align:left;' ><em><span>JETP Lett.</span></em><span> </span><strong><span>123</span></strong><span>, 556–565 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>SC(In) / AM(CrSb); SC(In) / AM(CrSb) / SC(In)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Josephson Diode and Spin-Valve Effects on the Surface of Altermagnet CrSb</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>在 In/CrSb 器件中测量近邻超流，以及外磁场下的二极管效应和自旋阀样响应。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>C03‡</span></td><td style='text-align:left;' ><em><span>Phys. Rev. Lett.</span></em><span> </span><strong><span>137</span></strong><span>, 016701 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>SC(Nb) / AM(CrSb) (point contact)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Andreev Reflection to Probe Momentum-Dependent Spin Polarization in Altermagnet CrSb</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>比较三个晶向的点接触 Andreev 谱并拟合输运自旋极化；相关解释另有 Comment。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>C04</span></td><td style='text-align:left;' ><span>arXiv:2601.19052 (2026, </span><strong><span>预印本</span></strong><span>)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>SC(Nb) / RuO2 (candidate AM; point contact)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Transport spin polarization in RuO2 films</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>结合 PCAR 与反常霍尔测量研究 RuO2 薄膜的输运自旋极化及晶向依赖。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>C05</span></td><td style='text-align:left;' ><span>arXiv:2610.11341 (2026, </span><strong><span>预印本</span></strong><span>)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>SC(Nb) / AM(CrSb) / SC(Nb) (lateral; strained film)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Strain-engineered long-distance supercurrent in an altermagnetic CrSb based-Josephson junction</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>报告应变 CrSb 中跨越 150 nm 的超流与磁场干涉，并讨论三重态近邻机制。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='注释-2'><span>注释</span></h3><ul><li><p><span>AM = altermagnet；SC = superconductor；N = normal metal。编号沿用原清单，文章题目保留原文。</span></p></li><li><p><span>(AM + SC) 表示耦合的 AM–SC 近邻平台或同时具有 AM 与超导配对的区域；材料名用于注明具体器件。</span></p></li><li><p><span>s-wave / d-wave 修饰 SC 时表示配对对称性；singlet / triplet 表示自旋单重态 / 三重态。</span></p></li><li><p><span>SC(In) / SC(Nb) 分别表示铟 / 铌电极；PCAR = point-contact Andreev reflection。</span></p></li><li><p><span>‡ C03：有 Comment（arXiv:2609.25357），宜并读；C04、C05 为预印本。</span></p></li><li><p><span>MnTe、RuO2 按候选 AM 体系表述；C02 二极管测量在外场下进行，C05 的长程机制为作者解释。</span></p></li><li><p><span>C03 Comment：</span><a href='https://arxiv.org/abs/2609.25357'><span>arXiv:2609.25357</span></a><span>。Comment 质疑 PCAR 的对称性解释和极化拟合；此处记录争议。</span></p></li><li><p><span>C04 的 Nb 探针也见作者的 </span><a href='https://meetings-archive.aps.org/smt/2026/mar-f38/4/'><span>APS 会议摘要</span></a><span>。C05 的 Nb/CrSb/Nb 结构、150 nm 间隔见 </span><a href='https://arxiv.org/html/2610.11341v1'><span>作者全文</span></a><span>。</span></p></li></ul><h3 id='原文入口-3'><span>原文入口</span></h3><ul><li><p><strong><span>C01</span></strong><span>：</span><a href='https://doi.org/10.1016/j.physb.2024.416602'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>C02</span></strong><span>：</span><a href='https://doi.org/10.1134/S0021364026600667'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>C03</span></strong><span>：</span><a href='https://doi.org/10.1103/42m7-p7l3'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>C04</span></strong><span>：</span><a href='https://arxiv.org/abs/2601.19052'><span>arXiv 作者版</span></a><span>。</span></p></li><li><p><strong><span>C05</span></strong><span>：</span><a href='https://arxiv.org/abs/2610.11341'><span>arXiv 作者版</span></a><span>。</span></p></li></ul><hr /><h2 id='d｜热电效应与隧穿'><span>D｜热电效应与隧穿</span></h2><h3 id='2024-3'><span>2024</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>D01</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>110</span></strong><span>, 094508 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / tunnel barrier / (AM + SC bilayer)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Thermoelectric effect in altermagnet-superconductor junctions</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用 AM/SC 双层的逆近邻自旋劈裂与另一 AM 的隧穿，产生无外场热电响应。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2026-4'><span>2026</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>D02</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>113</span></strong><span>, 104508 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / s-wave SC bilayer; SC / AM / SC</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Spin polarization and diode effect in thermoelectric current through altermagnet-based superconductor heterostructures</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>研究温差驱动的自旋极化准粒子电流，并在 AM Josephson 结构中实现热电整流。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='注释-3'><span>注释</span></h3><ul><li><p><span>AM = altermagnet；SC = superconductor；N = normal metal。编号沿用原清单，文章题目保留原文。</span></p></li><li><p><span>(AM + SC) 表示耦合的 AM–SC 近邻平台或同时具有 AM 与超导配对的区域；材料名用于注明具体器件。</span></p></li><li><p><span>s-wave / d-wave 修饰 SC 时表示配对对称性；singlet / triplet 表示自旋单重态 / 三重态。</span></p></li><li><p><span>D01 的右侧为 AM/SC 近邻双层，另一 AM 通过隧穿与其耦合。</span></p></li><li><p><span>D02 讨论温差驱动的热电整流；与平衡 Josephson 临界电流二极管应区别阅读。</span></p></li><li><p><span>D01 的隧穿对象为另一 AM 与 AM/SC 双层；结构依据期刊摘要。D02 讨论的是耗散准粒子热电流，而不是平衡超流临界电流的非互易性。</span></p></li></ul><h3 id='原文入口-4'><span>原文入口</span></h3><ul><li><p><strong><span>D01</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.110.094508'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>D02</span></strong><span>：</span><a href='https://doi.org/10.1103/jd41-26xr'><span>期刊 / DOI</span></a><span>。</span></p></li></ul><hr /><h2 id='e｜其他近期预印本'><span>E｜其他近期预印本</span></h2><h3 id='2026-5'><span>2026</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>E01</span></td><td style='text-align:left;' ><span>arXiv:2602.14485 (2026, </span><strong><span>预印本</span></strong><span>)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>Rashba SC / CsV2Te2O AM / Rashba SC (planar / vertical)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Altermagnetic Even-Odd Effects in CsV2Te2O Josephson Junctions</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>揭示层数奇偶对自旋选择超流与三重态输运的调控，比较平面结和垂直结。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>E02</span></td><td style='text-align:left;' ><span>arXiv:2605.02140 (2026, </span><strong><span>预印本</span></strong><span>)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM1 / N / AM2 / s-wave SC</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Spin-polarized Josephson current induced by inhomogeneous altermagnetic interlayers</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用 AM Néel 矢量的非共线排列调控配对振荡与 CPR，并产生自旋极化超流。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>E03</span></td><td style='text-align:left;' ><span>arXiv:2603.25844 (2026, </span><strong><span>预印本</span></strong><span>)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>SC / AM / SC (planar / nanowire / T-shaped)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Double-peak Majorana bound states in altermagnet–superconductor heterostructures</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>研究界面控制的 Majorana 波函数双峰分布，并比较平面、纳米线与 T 形几何。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>E04</span></td><td style='text-align:left;' ><span>arXiv:2605.13317 (2026, </span><strong><span>预印本</span></strong><span>)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / Ising SC (spin-active interface)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Interface controlled spin filtering and nonreciprocal transport in altermagnet/Ising-superconductor junctions</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>通过自旋活性界面调节电荷与自旋电导，研究自旋过滤和非互易输运。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>E05</span></td><td style='text-align:left;' ><span>arXiv:2607.04097 (2026, </span><strong><span>预印本</span></strong><span>)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>SC / AM / SC (gate-controlled Josephson qubit)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Full Gate-Voltage Control of a Parity-Protected Superconducting Qubit with an Altermagnetic Josephson Junction</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用栅压在 0–π 附近调控第一、第二谐波，提出宇称保护量子比特的全电控制。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>E06</span></td><td style='text-align:left;' ><span>arXiv:2608.11906 (2026, </span><strong><span>预印本</span></strong><span>)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>SC / AM / SC (spin-active interfaces)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Spin-polarized supercurrents and Josephson diode effect in altermagnets</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>比较弱、强极化 AM 的自旋超流、高次谐波与二极管效应，突出自旋活性界面作用。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='注释-4'><span>注释</span></h3><ul><li><p><span>AM = altermagnet；SC = superconductor；N = normal metal。编号沿用原清单，文章题目保留原文。</span></p></li><li><p><span>(AM + SC) 表示耦合的 AM–SC 近邻平台或同时具有 AM 与超导配对的区域；材料名用于注明具体器件。</span></p></li><li><p><span>s-wave / d-wave 修饰 SC 时表示配对对称性；singlet / triplet 表示自旋单重态 / 三重态。</span></p></li><li><p><span>本组以 arXiv 编号和年份呈现；不补写未确认的期刊卷页。</span></p></li><li><p><span>E01 讨论 CsV2Te2O 家族的 hidden AM；E02 明确包含两个 AM 区域与中央 N 层。</span></p></li><li><p><span>E02 的五段结构见 </span><a href='https://arxiv.org/html/2605.02140v1'><span>作者全文 Fig. 1</span></a><span>。E01 的 Rashba SC 平面/垂直结见 </span><a href='https://arxiv.org/html/2602.14485v1'><span>作者全文</span></a><span>。</span></p></li><li><p><span>预印本身份沿用检索清单；未确认正式版本的条目仍以 arXiv 列示。</span></p></li></ul><h3 id='原文入口-5'><span>原文入口</span></h3><ul><li><p><strong><span>E01</span></strong><span>：</span><a href='https://arxiv.org/abs/2602.14485'><span>arXiv 作者版</span></a><span>。</span></p></li><li><p><strong><span>E02</span></strong><span>：</span><a href='https://arxiv.org/abs/2605.02140'><span>arXiv 作者版</span></a><span>。</span></p></li><li><p><strong><span>E03</span></strong><span>：</span><a href='https://arxiv.org/abs/2603.25844'><span>arXiv 作者版</span></a><span>。</span></p></li><li><p><strong><span>E04</span></strong><span>：</span><a href='https://arxiv.org/abs/2605.13317'><span>arXiv 作者版</span></a><span>。</span></p></li><li><p><strong><span>E05</span></strong><span>：</span><a href='https://arxiv.org/abs/2607.04097v1'><span>arXiv 作者版</span></a><span>。</span></p></li><li><p><strong><span>E06</span></strong><span>：</span><a href='https://arxiv.org/abs/2608.11906'><span>arXiv 作者版</span></a><span>。</span></p></li></ul><hr /><h2 id='f｜近邻效应与输运理论框架'><span>F｜近邻效应与输运理论框架</span></h2><h3 id='2024-4'><span>2024</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>F01</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>109</span></strong><span>, 134511 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / s-wave SC bilayer; AM / s-wave SC / AM trilayer</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Superconductor-altermagnet memory functionality without stray fields</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>通过旋转 Néel 矢量控制超导临界温度，提出无杂散场的低温存储器件。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>F02*</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>110</span></strong><span>, L140506 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>SC / AM (quasiclassical proximity framework)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Quasiclassical theory of superconducting spin-splitter effects and spin-filtering via altermagnets</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>建立 AM 超导近邻体系的准经典方程与边界条件；相关效应须按勘误修正。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2025-4'><span>2025</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>F03</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>111</span></strong><span>, 224503 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / s-wave SC bilayer</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Thermodynamic properties of a superconductor interfaced with an altermagnet</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>计算 AM/SC 双层的超导相图与热容，并与铁磁体/SC 双层进行比较。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>F04</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>111</span></strong><span>, L100502 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>s-wave SC / AM bilayer (disorder)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Disorder-enhanced superconductivity in altermagnet-superconductor hybrids</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>从微观理论说明杂质散射可平均动量依赖交换场，从而提高超导临界温度。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>F06</span></td><td style='text-align:left;' ><em><span>SciPost Phys.</span></em><span> </span><strong><span>18</span></strong><span>, 178 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / SC (diffusive transport framework)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Quantum transport theory for unconventional magnets: Interplay of altermagnetism and p-wave magnetism with superconductivity</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>由自旋群约束构建扩散输运理论，区分 AM 与 p 波磁体的超导响应。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2026-6'><span>2026</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>F05</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>113</span></strong><span>, 134526 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>SC / AM (dirty-limit hybrid / Usadel theory)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Effective magnetic scattering in dirty superconductor-altermagnet hybrid systems</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>推导脏极限的 Usadel 型理论，揭示 AM 交换场与杂质共同产生的有效磁散射。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>F07</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>114</span></strong><span>, 134516 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM–SC proximity systems (AC drive)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Nonequilibrium spin-splitter effect in altermagnet superconductor hybrids</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>计算交流驱动下的自旋电流与边缘自旋密度，区分非平衡响应和平衡超流。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='注释-5'><span>注释</span></h3><ul><li><p><span>AM = altermagnet；SC = superconductor；N = normal metal。编号沿用原清单，文章题目保留原文。</span></p></li><li><p><span>(AM + SC) 表示耦合的 AM–SC 近邻平台或同时具有 AM 与超导配对的区域；材料名用于注明具体器件。</span></p></li><li><p><span>本组为支撑文献；部分条目是理论框架或近邻双层，未限定单一结结构。</span></p></li><li><ul><li><p><span>F02：另见勘误 Phys. Rev. B 113, 059901 (2026)；效应判断须采用修正后的版本。</span></p></li></ul></li><li><p><span>F02 勘误：</span><a href='https://doi.org/10.1103/wms6-crmz'><span>Phys. Rev. B 113, 059901 (2026)</span></a><span>。</span></p></li><li><p><span>F01 明确比较 AM/SC 双层与 AM/SC/AM 三层：</span><a href='https://arxiv.org/pdf/2308.10939'><span>作者 PDF</span></a><span>。</span></p></li></ul><h3 id='原文入口-6'><span>原文入口</span></h3><ul><li><p><strong><span>F01</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.109.134511'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>F02</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.110.L140506'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>F03</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.111.224503'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>F04</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.111.L100502'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>F05</span></strong><span>：</span><a href='https://doi.org/10.1103/nhmz-rgw9'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>F06</span></strong><span>：</span><a href='https://doi.org/10.21468/SciPostPhys.18.6.178'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>F07</span></strong><span>：</span><a href='https://doi.org/10.1103/fwhy-5d9h'><span>期刊 / DOI</span></a><span>。</span></p></li></ul><hr /><h2 id='g｜拓扑异质结构支撑'><span>G｜拓扑异质结构支撑</span></h2><h3 id='2023'><span>2023</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>G01</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>108</span></strong><span>, 205410 (2023)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>TI(AM + s-wave SC) (2D proximity platform)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Majorana corner modes and tunable patterns in an altermagnet heterostructure</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用 AM 与超导配对的边缘质量竞争产生 Majorana 角态，并用 Néel 方向和应变调控。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2024-5'><span>2024</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>G02</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>109</span></strong><span>, 224502 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / topological SC (class DIII)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Realizing tunable higher-order topological superconductors with altermagnets</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>将 DIII 类拓扑 SC 与 AM 耦合，产生可调的高阶拓扑超导及反演保护的角态。</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' ><span>G03</span></td><td style='text-align:left;' ><em><span>Phys. Rev. Lett.</span></em><span> </span><strong><span>133</span></strong><span>, 106601 (2024)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>nanowire(AM + s-wave SC); 2D AM–SC platforms</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Altermagnetic Routes to Majorana Modes in Zero Net Magnetization</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>提出零净磁化的一维端点 MZM 与二维手性/高阶 Majorana 平台。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2025-5'><span>2025</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>G04</span></td><td style='text-align:left;' ><em><span>Phys. Rev. B</span></em><span> </span><strong><span>111</span></strong><span>, L121401 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>T-junction: N1 + N2 + RNW(AM + s-wave SC)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Distinguishing between topological Majorana and trivial zero modes via transport and shot noise study in an altermagnet heterostructure</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>利用 T 形三端结构中的电导和散粒噪声，区分拓扑 Majorana 模与平庸偶然零模。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2026-7'><span>2026</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>G05</span></td><td style='text-align:left;' ><em><span>APS Open Sci.</span></em><span> </span><strong><span>1</span></strong><span>, L000045 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / SC (2D platform; H-shaped network)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Altermagnet-superconductor heterostructure: A scalable platform for braiding of Majorana modes</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>通过 Néel 矢量旋转移动 MZM，并在方形与 H 形网络中模拟编织和量子门。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='注释-6'><span>注释</span></h3><ul><li><p><span>AM = altermagnet；SC = superconductor；N = normal metal。编号沿用原清单，文章题目保留原文。</span></p></li><li><p><span>(AM + SC) 表示耦合的 AM–SC 近邻平台或同时具有 AM 与超导配对的区域；材料名用于注明具体器件。</span></p></li><li><p><span>TI = topological insulator；RNW = Rashba nanowire；MZM = Majorana zero mode。</span></p></li><li><p><span>本组包含拓扑近邻平台，部分不是 Josephson 结；G04 为 T 形三端输运结构。</span></p></li><li><p><span>G02 的 SC 为 DIII 类拓扑 SC；不将它简化为普通 s-wave SC。</span></p></li><li><p><span>G04 的两个正常金属端口与 AM–SC 近邻 Rashba 纳米线构成 T 形三端结构：</span><a href='https://arxiv.org/html/2409.08009v1'><span>作者全文 Fig. 1</span></a><span>。</span></p></li></ul><h3 id='原文入口-7'><span>原文入口</span></h3><ul><li><p><strong><span>G01</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.108.205410'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>G02</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.109.224502'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>G03</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevLett.133.106601'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>G04</span></strong><span>：</span><a href='https://doi.org/10.1103/PhysRevB.111.L121401'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>G05</span></strong><span>：</span><a href='https://doi.org/10.1103/bfwd-hcm5'><span>期刊 / DOI</span></a><span>。</span></p></li></ul><hr /><h2 id='r｜综述入口'><span>R｜综述入口</span></h2><h3 id='2025-6'><span>2025</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>R01</span></td><td style='text-align:left;' ><em><span>J. Phys.: Condens. Matter</span></em><span> </span><strong><span>37</span></strong><span>, 313003 (2025)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM / SC; SC / AM / SC; AM / SC / AM (review)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Superconducting phenomena in systems with unconventional magnets</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>综述 AM 等非常规磁体中的近邻配对、界面 AR、Josephson 效应与实验进展。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='2026-8'><span>2026</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>编号</span></th><th style='text-align:left;' ><span>期刊信息 / 文章题目 / 研究内容</span></th><th style='text-align:left;' ><span>Junction 类型 / 平台结构</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>R02</span></td><td style='text-align:left;' ><em><span>Rep. Prog. Phys.</span></em><span> </span><strong><span>89</span></strong><span>, 094501 (2026)</span></td><td style='text-align:left;' ><span style="color:#1456B8;"><span>AM + SC; AM / SC proximity; Josephson junctions (review)</span></span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><span>Altermagnetism and Superconductivity: A Short Historical Review</span></td><td style='text-align:left;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:left;' ><strong><span>研究内容：</span></strong><span>梳理交错磁与超导的历史联系，讨论体相配对、近邻效应与拓扑超导平台。</span></td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><h3 id='注释-7'><span>注释</span></h3><ul><li><p><span>AM = altermagnet；SC = superconductor；N = normal metal。编号沿用原清单，文章题目保留原文。</span></p></li><li><p><span>(AM + SC) 表示耦合的 AM–SC 近邻平台或同时具有 AM 与超导配对的区域；材料名用于注明具体器件。</span></p></li><li><p><span>蓝色文字列出综述涉及的代表性结构；综述并非单一 junction 的原始研究。</span></p></li><li><p><span>R01 同时讨论 p 波磁体；R02 还涉及体相配对，阅读时应与界面和弱连接研究区分。</span></p></li></ul><h3 id='原文入口-8'><span>原文入口</span></h3><ul><li><p><strong><span>R01</span></strong><span>：</span><a href='https://doi.org/10.1088/1361-648X/adf1cf'><span>期刊 / DOI</span></a><span>。</span></p></li><li><p><strong><span>R02</span></strong><span>：</span><a href='https://doi.org/10.1088/1361-6633/ae9e46'><span>期刊 / DOI</span></a><span>。</span></p></li></ul><h2 id='使用说明'><span>使用说明</span></h2><ul><li><p><span>AM = altermagnet；SC = superconductor；N = normal metal。AR = Andreev reflection；CAR = crossed Andreev reflection；PCAR = point-contact Andreev reflection。</span></p></li><li><p><span>RNW = Rashba nanowire；TI = topological insulator；MZM = Majorana zero mode；ABS = Andreev bound states；CPR = current–phase relation。</span></p></li><li><p><span>“+” 表示近邻耦合或同一区域中的成分；双层/多层结构与沿输运方向的弱连接结构按各条文献具体说明区分。</span></p></li><li><p><span>本文件和图片用于文献导航；简述依据原检索清单、期刊/作者摘要及重点结构核对，不替代模型与结论的全文复核。</span></p></li><li><p><span>图片为 3500 像素宽、300 dpi。PNG 含文献元数据；Markdown 内的蓝色使用 HTML span，具体显示取决于 Markdown 编辑器。</span></p></li></ul></div></div>
+</body>
+</html>
