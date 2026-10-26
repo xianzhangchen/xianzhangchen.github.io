@@ -1,4 +1,5 @@
 ---
+status: draft
 title: Instructions to server usage
 date: 2024-05-24
 source: https://zhoueit.github.io/2024/05/24/instructions-to-server-usage/

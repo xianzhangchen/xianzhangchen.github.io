@@ -1,4 +1,5 @@
 ---
+status: draft
 title: BdG Equation in different spaces
 date: 2024-05-17
 source: https://zhoueit.github.io/2024/05/17/bdg-equation-in-different-spaces/

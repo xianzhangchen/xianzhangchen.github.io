@@ -1,0 +1,77 @@
+{
+  "default_theme": "github",
+  "themes": [
+    {
+      "id": "academic",
+      "name": "Academic",
+      "description": "清爽学术青灰",
+      "colors": {
+        "background": "#f7f9fc",
+        "surface": "#ffffff",
+        "text": "#2e4051",
+        "accent": "#086d75",
+        "highlight": "#8dbdbd"
+      }
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "description": "清爽白灰蓝",
+      "colors": {
+        "background": "#f6f8fa",
+        "surface": "#ffffff",
+        "text": "#30363d",
+        "accent": "#0969da",
+        "highlight": "#8cadd5"
+      }
+    },
+    {
+      "id": "teal-gold",
+      "name": "Teal & Gold",
+      "description": "青蓝暖黄",
+      "colors": {
+        "background": "#f8faf8",
+        "surface": "#ffffff",
+        "text": "#2f4141",
+        "accent": "#086d75",
+        "highlight": "#d3ad52"
+      }
+    },
+    {
+      "id": "slate-blue",
+      "name": "Slate Blue",
+      "description": "灰蓝留白",
+      "colors": {
+        "background": "#f2f4f7",
+        "surface": "#ffffff",
+        "text": "#354253",
+        "accent": "#425f91",
+        "highlight": "#91a4c2"
+      }
+    },
+    {
+      "id": "ivory-navy",
+      "name": "Ivory & Navy",
+      "description": "象牙白深海蓝",
+      "colors": {
+        "background": "#faf7f0",
+        "surface": "#fffdf8",
+        "text": "#3b4250",
+        "accent": "#254767",
+        "highlight": "#bd994b"
+      }
+    },
+    {
+      "id": "graphite-lilac",
+      "name": "Graphite & Lilac",
+      "description": "浅石墨淡紫",
+      "colors": {
+        "background": "#f5f5f8",
+        "surface": "#ffffff",
+        "text": "#3e3e4a",
+        "accent": "#6553a2",
+        "highlight": "#a99ac7"
+      }
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 ---
+status: draft
 title: BdG Basic Knowledge
 date: 2024-05-15
 source: https://zhoueit.github.io/2024/05/15/majorana-basics/

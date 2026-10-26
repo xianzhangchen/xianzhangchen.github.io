@@ -1,0 +1,104 @@
+{
+  "site_title": "Condensed matter theory",
+  "name": "Xian-Zhang Chen",
+  "name_zh": "陈宪章",
+  "short_name": "X.-Z. Chen",
+  "role": "Research Assistant Professor",
+  "affiliation": "Ningbo Institute of Digital Twin & Eastern Institute of Technology, Ningbo",
+  "affiliation_short": "IDT & EIT, Ningbo",
+  "city": "Ningbo, China",
+  "email": "xzchen@idt.eitech.edu.cn",
+  "gmail": "chenxzhlzu@gmail.com",
+  "office": "数理楼 306",
+  "address": "Ningbo, Zhejiang, China",
+  "scholar": "https://scholar.google.com/citations?user=JxQkdVIAAAAJ&hl=en",
+  "orcid": "https://orcid.org/0000-0001-8821-7690",
+  "github": "https://github.com/xzcheneit",
+  "researchgate": "https://www.researchgate.net/profile/Xian-Zhang-Chen",
+  "group": "https://www.zhouphy.com/",
+  "updated": "2026-10-26",
+  "intro": "I study quantum transport and topological quantum devices, with a focus on Majorana modes, magnetic textures, and altermagnets. My research combines analytical modeling with numerical simulations to connect microscopic electronic structure, topology, and experimentally accessible transport signals. My earlier work examined scanning gate microscopy, quantum scars, and many-body spectral statistics in graphene nanostructures.",
+  "interests": ["Majorana", "Altermagnet", "Quantum Transport", "Mesoscopic Physics"],
+  "research": [
+    {
+      "title": "Altermagnets and topological transport",
+      "summary": "Gate control, proximity effects, and spin-dependent transport in altermagnetic systems.",
+      "href": "/publications.html#chen2026altermagnets"
+    },
+    {
+      "title": "Majorana modes and quantum devices",
+      "summary": "Topological superconductivity and magnetic platforms for controlling Majorana modes.",
+      "href": "/publications.html#huang2025braiding"
+    },
+    {
+      "title": "Graphene and mesoscopic physics",
+      "summary": "Scanning gate microscopy, quantum scars, and the interplay of interactions and spectral statistics.",
+      "href": "/publications.html#chen2023sgm"
+    }
+  ],
+  "education": [
+    {
+      "title": "Ph.D. in Theoretical Physics",
+      "institution": "Lanzhou University, Lanzhou, China",
+      "period": "2016.09 - 2023.06"
+    },
+    {
+      "title": "Joint Ph.D. training in Condensed Matter Physics",
+      "institution": "University of Strasbourg, Strasbourg, France",
+      "period": "2020.12 - 2022.11"
+    },
+    {
+      "title": "Bachelor in Theoretical Physics",
+      "institution": "Lanzhou University, Lanzhou, China",
+      "period": "2012 - 2016"
+    }
+  ],
+  "employment": [
+    {
+      "title": "Research Assistant Professor",
+      "institution": "Ningbo Institute of Digital Twin & Eastern Institute of Technology, Ningbo",
+      "period": "2025.12 - Present"
+    },
+    {
+      "title": "Postdoctoral Researcher in Condensed Matter Theory",
+      "institution": "Eastern Institute for Advanced Study (EIAS), Eastern Institute of Technology, Ningbo",
+      "period": "2023.09 - 2025.11"
+    }
+  ],
+  "cv": {
+    "en": "/XC-EN-CV/XC-EN-CV.pdf",
+    "zh": "/XC-CN-CV/XC-CN-CV.pdf"
+  },
+  "intro_short": "I study quantum transport and topological devices, focusing on Majorana modes, magnetic textures and altermagnets. My work connects microscopic models with experimentally accessible transport signatures.",
+  "resources": [
+    {
+      "title": "arXiv · Condensed matter",
+      "url": "https://arxiv.org/list/cond-mat/new"
+    },
+    {
+      "title": "Physics paper updates",
+      "url": "https://xzcheneit.github.io/"
+    },
+    {
+      "title": "Selected-paper collection",
+      "url": "https://cheneit.github.io/"
+    }
+  ],
+  "home_banner": {
+    "enabled": true,
+    "src": "/img/research/quantum-materials-banner-v1.jpg",
+    "alt": "AI-generated conceptual photograph of a quantum-materials chip, gold contacts and low-temperature measurement hardware.",
+    "mode": "fixed",
+    "interval_ms": 6000,
+    "slides": [
+      {
+        "src": "/img/research/quantum-materials-banner-v1.jpg",
+        "alt": "AI-generated conceptual photograph of a quantum-materials chip, gold contacts and low-temperature measurement hardware."
+      },
+      {
+        "src": "/img/research/quantum-materials-banner-v2.jpg",
+        "alt": "AI-generated conceptual photograph of a graphene quantum device under a scanning probe."
+      }
+    ]
+  }
+}

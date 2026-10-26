@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: background banner for a theoretical condensed-matter physicist's academic homepage.
+Primary request: a refined, realistic panoramic image evoking quantum transport, graphene nanostructures, magnetic materials and topological superconducting devices, presented as a plausible scientific materials laboratory still life.
+Scene and subject: macro editorial photography of a small pristine semiconductor/quantum-material chip mounted on a brushed-metal sample carrier, delicate gold bond wires and finely fabricated metallic contacts, a dark thin-film wafer with a subtle iridescent surface; softly out-of-focus low-temperature measurement hardware and silver coaxial connectors in the background. No people.
+Composition: exceptionally wide landscape panorama, ideally 3:1. The final web display will crop to a shallow 5:1 strip, so keep every important feature in the central horizontal third. A single coherent scene, not a collage. Modest visual density, generous soft negative space to the sides, chip positioned near the middle-right, shallow depth of field. No inset panels.
+Style: photorealistic scientific editorial photograph, natural material texture, believable optics and fabrication details. Quiet, understated, contemplative; suitable as an atmospheric academic background.
+Lighting and palette: soft daylight and restrained laboratory reflections, predominantly silver, cool gray and soft off-white, muted blue/teal shadows, a few warm gold highlights from the bond wires. Low to medium contrast so the image works with several light website palettes.
+Text: none.
+Constraints: conceptual research imagery, do not pretend to document a specific experiment; no logos, captions, formulas, arrows, diagrams, neon particle effects, floating molecules, science-fiction glow, oversaturated colors, or watermark. Avoid giant fantasy atoms and impossible apparatus.

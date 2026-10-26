@@ -1,84 +1,188 @@
 [
   {
     "slug": "add-disorder-by-kwant",
-    "title": "Add disorder by Kwant",
+    "title": "Reproducible on-site disorder in Kwant",
     "date": "2024-05-23",
     "category": "Scientific Tools",
-    "tags": "",
+    "tags": [
+      "Kwant",
+      "Disorder",
+      "Reproducibility"
+    ],
+    "language": "en",
+    "excerpt": "Construct a deterministic on-site disorder potential with kwant.digest, and control independent realizations with an explicit salt.",
+    "status": "published",
     "source": "https://zhoueit.github.io/2024/05/23/add-disorder-by-kwant/",
-    "excerpt": "Edit this post in:"
+    "content": "blog/posts/add-disorder-by-kwant.md",
+    "updated": "2026-10-26",
+    "cover": {
+      "enabled": true,
+      "src": "",
+      "alt": ""
+    }
   },
   {
     "slug": "bdg-basic-knowledge",
     "title": "BdG Basic Knowledge",
     "date": "2024-05-15",
     "category": "Topological Quantum Computing",
-    "tags": "",
+    "tags": [
+      "BdG",
+      "Superconductivity"
+    ],
+    "language": "en",
+    "excerpt": "Read the original introductory note on Bogoliubov–de Gennes theory and Majorana physics.",
+    "status": "external",
     "source": "https://zhoueit.github.io/2024/05/15/majorana-basics/",
-    "excerpt": "This is a placeholder page created so that your Blog links on the homepage open a **same-style** article page on GitHub Pages."
+    "url": "https://zhoueit.github.io/2024/05/15/majorana-basics/",
+    "cover": {
+      "enabled": true,
+      "src": "",
+      "alt": ""
+    }
   },
   {
     "slug": "bdg-equation-different-spaces",
     "title": "BdG Equation in different spaces",
     "date": "2024-05-17",
     "category": "Topological Quantum Computing",
-    "tags": "",
+    "tags": [
+      "BdG",
+      "Superconductivity"
+    ],
+    "language": "en",
+    "excerpt": "Read the original note on writing the Bogoliubov–de Gennes equation in different representations.",
+    "status": "external",
     "source": "https://zhoueit.github.io/2024/05/17/bdg-equation-in-different-spaces/",
-    "excerpt": "Edit this post in:"
+    "url": "https://zhoueit.github.io/2024/05/17/bdg-equation-in-different-spaces/",
+    "cover": {
+      "enabled": true,
+      "src": "",
+      "alt": ""
+    }
   },
   {
     "slug": "bdg-equation-tight-binding",
     "title": "BdG Equation in tight-binding approximation",
     "date": "2024-05-17",
     "category": "Topological Quantum Computing",
-    "tags": "",
+    "tags": [
+      "BdG",
+      "Tight binding"
+    ],
+    "language": "en",
+    "excerpt": "Read the original note on the Bogoliubov–de Gennes equation in a tight-binding model.",
+    "status": "external",
     "source": "https://zhoueit.github.io/2024/05/17/bdg-equation-in-tight-binding-approximation/",
-    "excerpt": "Edit this post in:"
+    "url": "https://zhoueit.github.io/2024/05/17/bdg-equation-in-tight-binding-approximation/",
+    "cover": {
+      "enabled": true,
+      "src": "",
+      "alt": ""
+    }
   },
   {
     "slug": "instructions-to-server-usage",
     "title": "Instructions to server usage",
     "date": "2024-05-24",
     "category": "Scientific Tools",
-    "tags": "",
+    "tags": [
+      "Scientific computing",
+      "Server"
+    ],
+    "language": "en",
+    "excerpt": "Open the original guide to using a research computing server.",
+    "status": "external",
     "source": "https://zhoueit.github.io/2024/05/24/instructions-to-server-usage/",
-    "excerpt": "Edit this post in:"
+    "url": "https://zhoueit.github.io/2024/05/24/instructions-to-server-usage/",
+    "cover": {
+      "enabled": true,
+      "src": "",
+      "alt": ""
+    }
   },
   {
     "slug": "physics-article-updates",
     "title": "Physics related article update",
     "date": "2024-05-01",
     "category": "Scientific Tools",
-    "tags": "",
+    "tags": [
+      "Literature",
+      "Condensed matter"
+    ],
+    "language": "en",
+    "excerpt": "Browse the linked site for physics paper updates and literature reading.",
+    "status": "external",
     "source": "https://xzcheneit.github.io/",
-    "excerpt": "Edit this post in:"
+    "url": "https://xzcheneit.github.io/",
+    "cover": {
+      "enabled": true,
+      "src": "",
+      "alt": ""
+    }
   },
   {
+    "slug": "pyx-publication-ready",
     "title": "Publication-ready package -- PyX",
     "date": "2024-04-22",
     "category": "Scientific Tools",
-    "tags": "",
+    "tags": [
+      "PyX",
+      "Scientific figures"
+    ],
+    "language": "en",
+    "excerpt": "Open the original introduction to preparing scientific figures with PyX.",
+    "status": "external",
     "source": "https://zhoueit.github.io/2024/04/22/ke-yan-zuo-tu/",
-    "excerpt": "Edit this post in:"
+    "url": "https://zhoueit.github.io/2024/04/22/ke-yan-zuo-tu/",
+    "cover": {
+      "enabled": true,
+      "src": "",
+      "alt": ""
+    }
   },
   {
+    "slug": "vim-iterm-setting",
     "title": "Vim and Iterm setting for Mac",
     "date": "2026-01-17",
     "category": "Scientific Tools",
-    "tags": "",
+    "tags": [
+      "macOS",
+      "zsh",
+      "终端工具"
+    ],
+    "language": "zh-CN",
+    "excerpt": "整理 macOS 下 zsh、Starship、fzf、ripgrep、zoxide、direnv 与 tmux 的安装、配置和排错命令。",
+    "status": "published",
+    "content": "content/articles/vim-iterm-setting.html",
     "url": "posts/vim_iterm_setting.html",
-    "type": "html",
-    "excerpt": "Edit this post in:"
+    "updated": "2026-10-26",
+    "cover": {
+      "enabled": true,
+      "src": "",
+      "alt": ""
+    }
   },
   {
+    "slug": "am-sc-literature",
     "title": "Altermagnetism and Superconductor hybrid references",
     "date": "2026-10-13",
     "category": "Scientific Tools",
-    "tags": "",
+    "tags": [
+      "交错磁",
+      "超导",
+      "文献整理"
+    ],
+    "language": "zh-CN",
+    "excerpt": "按 Josephson 结、Andreev 反射、实验、热电、近邻与拓扑平台等主题整理 58 条 AM–SC 文献，保留期刊信息、结构简述及原文入口。",
+    "status": "published",
+    "content": "content/articles/am-sc-literature.html",
     "url": "posts/AM_SC_Literatures.html",
-    "type": "html",
-    "excerpt": "Edit this post in:"
+    "updated": "2026-10-26",
+    "cover": {
+      "enabled": true,
+      "src": "",
+      "alt": ""
+    }
   }
-
-
 ]

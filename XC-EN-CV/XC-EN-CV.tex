@@ -4,7 +4,7 @@
 % License : MIT
 %------------------------
 
-\documentclass[letterpaper,10.8pt]{article}
+\documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -13,14 +13,15 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[pdftex]{hyperref}
+\usepackage{hyperref}\hypersetup{hidelinks,pdftitle={Xian-Zhang Chen - Academic CV},pdfauthor={Xian-Zhang Chen}}
 \usepackage{fancyhdr}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
-\fancyfoot{}
+\fancyfoot[L]{\footnotesize Updated: 2026-10-26}\fancyfoot[R]{\footnotesize\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{20pt}
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.375in}
@@ -79,16 +80,17 @@
 \begin{document}
 
 %----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{{\LARGE Xian-Zhang Chen}} \\
-  Eastern Institute for Advanced Study (EIAS), EITech, Ningbo\\
-  No. 568 Tongxin Road, Zhenhai District, Ningbo, Zhejiang, China\\
-  % \href{https://www.linkedin.com/in/shubhir/}{Linkedin: https://www.linkedin.com/in/shubhir/} \\
-  Mobile: +86 18189548536 \\
-  Email: xzchen@eitech.edu.cn; chenxzhlzu@outlook.com\\
-  Website: \href{xceias.com}{www.xceias.com}
-  % \href{https://github.com/shubhi28}{Github: https://github.com/shubhi28} \\
-\end{tabular*}
+% Contact and employment: synchronize with data/profile.json.
+\textbf{{\LARGE Xian-Zhang Chen}}\par
+\vspace{0.4em}
+Research Assistant Professor\par
+Ningbo Institute of Digital Twin\par
+Eastern Institute of Technology, Ningbo, China\par
+Email: \href{mailto:xzchen@idt.eitech.edu.cn}{xzchen@idt.eitech.edu.cn};
+\href{mailto:chenxzhlzu@gmail.com}{chenxzhlzu@gmail.com}\par
+Website: \href{https://xianzhangchen.github.io/}{xianzhangchen.github.io}\par
+ORCID: \href{https://orcid.org/0000-0001-8821-7690}{0000-0001-8821-7690}
+
 
 %-----------EDUCATION-----------------
 \section{Education}
@@ -96,7 +98,7 @@
 
     \resumeSubheading
       {ICPCS, Lanzhou University}{Lanzhou, China}
-      {Ph.D. in Condensed Matter Theory}{September 2016 - June 2023}
+      {Ph.D. in Theoretical Physics}{September 2016 - June 2023}
 
 	{\textit{Thesis title: Wavefunction-related Quantum Transport and Many-body effects in Graphene\\
     Advisor: Prof. Liang Huang and Prof. Rodolfo A. Jalabert}}
@@ -110,18 +112,18 @@
 
     \resumeSubheading
       {School of Physical Science and Technology, Lanzhou University}{Lanzhou, China}
-      {Bachelor of Theoretical Physics}{September 2012 - July 2016}
+      {Bachelor of Theoretical Physics}{2012 - 2016}
 
       {\textit{Thesis title: Quantum Transport in an Octagonal Graphene dot\\
     Advisor: Prof. Liang Huang}}
   \resumeSubHeadingListEnd
   
 % -------------Employment-----------------
-\section{Empolyment}
+\section{Employment}
 \resumeSubHeadingListStart
 \resumeSubheading
-{IDT, Eastern Institute of Technology, Ningbo}{Ningbo, China}
-{Research Assistant Professor}{December 2025 - Now}
+{Ningbo Institute of Digital Twin / EIT}{Ningbo, China}
+{Research Assistant Professor}{December 2025 - Present}
 
 {\textit{Research field: Topological Quantum Computing and Novel Magnetism\\
 		Cooperative Advisor: Prof. Tong Zhou}}
@@ -146,8 +148,9 @@
 \item {National Scholarship for Postgraduates (CNY 20,000), Ministry of Education of P. R. China, 2016}
 \end{description}
 
+\newpage
 \section{Personal Statement}
-My postdoctoral research centers on magnetic skyrmions for topological quantum devices. I develop skyrmion-engineered platforms to generate and control Majorana zero modes, and I design braiding and fusion protocols driven by skyrmion motion to realize non-Abelian statistics. To address readout, I propose scanning-gate-microscopy (SGM)–based detection approaches that interface naturally with transport. In a complementary line, I investigate altermagnetism, mapping its topological characteristics, analyzing proximity effects, and linking altermagnetic phases to topological superconductivity. My simulations combine KWANT (quantum transport/BdG), OOMMF (skyrmion micromagnetics), and DFT (altermagnet electronic structures).
+My research centers on magnetic textures and topological quantum devices. I develop skyrmion-engineered platforms to generate and control Majorana zero modes, and I design braiding and fusion protocols driven by skyrmion motion to realize non-Abelian statistics. To address readout, I propose scanning-gate-microscopy (SGM)–based detection approaches that interface naturally with transport. In a complementary line, I investigate altermagnetism, mapping its topological characteristics, analyzing proximity effects, and linking altermagnetic phases to topological superconductivity. My simulations combine KWANT (quantum transport/BdG), OOMMF (skyrmion micromagnetics), and DFT (altermagnet electronic structures).
 
 Prior to this, my Ph.D. at ICPCS, Lanzhou University examined wavefunction properties in graphene—including SGM, magnetotransport, and many-body spectral statistics—with an emphasis on experimentally relevant theory and numerics for Dirac quasiparticles. This training established my habit of building end-to-end, experiment-proximate models, which I now apply to skyrmion-based topological devices and altermagnetic materials.
 
@@ -162,76 +165,37 @@ Prior to this, my Ph.D. at ICPCS, Lanzhou University examined wavefunction prope
 \end{description}
 
 %-----------EXPERIENCE-----------------
-\section{Publications}
-
-  \begin{itemize}[font=$\bullet$]
-  \item[]{\textbf{Topological Quantum Computing}
-    \begin{itemize}
-    	\item {\textbf{Xian-Zhang Chen}, Shuang Li, Zhengyu Zhang, Igor Zutic, Tong Zhou, to appear}\\
-    	\textit{Contributions: Preliminary analytical derivation, calculation and analysis of numerical results, figure making, and paper writing.}
-    	\item {\textbf{Xian-Zhang Chen}, Yongliang Hu, Tong Zhou, to appear}\\
-    	\textit{Contributions: Preliminary analytical derivation, calculation and analysis of numerical results, figure making, and paper writing.}
-	    \item {Richang Huang, Yongliang Hu, \textbf{Xian-Zhang Chen}, Peng Yu, Igor Zutic, Tong Zhou, \textit{Towards Scalable Braiding: Topological Superconductivity Unlocked under Nearly Arbitrary Magnetic Field Directions in Planar Josephson Junctions}, \href{https://arxiv.org/abs/2504.20031}{arXiv:2504.20031}\\
-        \textit{Contributions: Helping in figure making, paper writing discussion and paper writing checking.}
-        }
-    \end{itemize}}
-
-
-  \item[]{\textbf{Magnetism (Altermagnet, QSH, QAH)}
-    \begin{itemize}
-    	\item {\textbf{Xian-Zhang Chen}, Jiayong Zhang, Bowen Hao, Ziye Zhu, Zhengyu Zhang, Igor Zutic, Tong Zhou, to appear}\\
-    	\textit{Contributions: Preliminary analytical derivation, calculation and analysis of numerical results, figure making, and paper writing.}
-	    \item {Ziye Zhu, Richang Huang,\textbf{Xian-Zhang Chen}, Xunkai Duan, Jiayong Zhang, Igor Zutic, Tong Zhou, \textit{Altermagnetic Proximity Effect}, \href{https://arxiv.org/abs/2509.06790}{arXiv:2509.06790}  \\
-        \textit{Contributions: Model discussion and paper writing checking.}
-        }
-        \item {Ziye Zhu, \textbf{Xian-Zhang Chen}, Xunkai Duan, Zhou Cui, Jiayong Zhang, Igor Zutic, Tong Zhou, \textit{Altermagnetic Proximity Effect}, \href{https://arxiv.org/abs/2512.02974}{arXiv:2512.02974}  \\
-        	\textit{Contributions: Transport calculation and partial paper writing.}
-        }
-		\item {Sihui Wu, Jiahui Qian, Xunkai Duan, \textbf{Xian-Zhang Chen}, Zhou Cui, Jiayong Zhang, Chunlan Ma, and Tong Zhou, \textit{Electrically switchable quantum anomalous and spin Hall states in two-dimensional honeycomb lattices with non-Dirac bands}, \href{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.235414}{Phys. Rev. B 111, 235414 (2025)}\\
-        \textit{Contributions: Model discussion and paper writing checking.}
-        }
-    \end{itemize}}
-
-
-  \item[]{\textbf{Quantum Transport (Graphene, SGM)}
-    \begin{itemize}
-    	\item {\textbf{Xian-Zhang Chen}, Yongliang Hu, Kang Yang, Tong Zhou, to appear}\\
-    	\textit{Contributions: Preliminary analytical derivation, calculation and analysis of numerical results, figure making, and paper writing.}
-        \item {\textbf{Xian-Zhang Chen}, Guillaume Weick, Dietmar Weinmann, Rodolfo A. Jalabert, \textit{Scanning gate microscopy in graphene nanostructures}, \href{https://doi.org/10.1103/PhysRevB.107.085420}{Phys. Rev. B 107, 085420 (2023)}.\\
-        \textit{Contributions: Preliminary analytical derivation, calculation and analysis of numerical results, figure making, and paper writing discussion.}
-        }
-        \item {Guan-Qun Zhang, \textbf{Xian-Zhang Chen}, Li Lin, Hai-Lin Peng, Zhong-Fan Liu, Liang Huang, Ning Kang, and Hong-Qi Xu, \textit{Transport signatures of relativistic quantum scars in a graphene cavity}, \href{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.101.085404}{Phys. Rev. B 101, 085404 (2020)}.\\
-        \textit{Contributions: Numerical simulation and analysis of experimental results and supplementary materials writing.}
-        }
-    \end{itemize}}
-
-    \item[]{\textbf{Many-body Effects in Graphene}
-    \begin{itemize}
-        \item {\textbf{Xian-Zhang Chen}, Zhen-Qi Chen, Liang Huang, Celso Grebogi, and Ying-Cheng Lai
-, \textit{Many-body spectral statistics of relativistic quantum billiard systems}, \href{https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.5.013050}{Phys. Rev. Research 5, 013050 (2023)}.\\
-        \textit{Contributions: Preliminary paper writing, calculation and analysis of numerical results, and figure making. }
-        }
-    \end{itemize}}
-
-    \item[]{\textbf{Chaotic Scattering (spin transport, entanglement)}
-    \begin{itemize}
-        \item {Chen-Rong Liu, \textbf{Xian-Zhang Chen}, Hong-Ya Xu, Liang Huang, and Ying-Cheng Lai, \textit{Effect of chaos on two-dimensional spin transport},  \href{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.98.115305}{Phys. Rev. B 98, 115305 (2018)}.\\
-        \textit{Contributions: Help in writing calculation programs and numerical results discussion.}
-        }
-        \item {Chen-Rong Liu, Pei Yu, \textbf{Xian-Zhang Chen}, Hong-Ya Xu, Liang Huang, and Ying-Cheng Lai, \textit{Enhancing von Neumann entropy by chaos in spin–orbit entanglement}, \href{https://iopscience.iop.org/article/10.1088/1674-1056/ab3dff}{Chin. Phys. B 28, 10 (2019)}.\\
-        \textit{Contributions: Numerical results discussion and paper writing checking.}
-        }
-    \end{itemize}}
-
-    \item[]{\textbf{Classical-quantum Correspondence}
-    \begin{itemize}
-        \item {Xiao-Liang Li, \textbf{Xian-Zhang Chen}, Chen-Rong Liu, and Liang Huang, \textit{Quantization condition of scarring states in complex soft-wall quantum billiards},  \href{https://wulixb.iphy.ac.cn/article/doi/10.7498/aps.69.20200360}{Acta Phys. Sin., 69, 080506 (2020)}.\\
-        \textit{Contributions: Help in writing calculation programs, numerical results analysis, and part of figures making.}
-        }
-    \end{itemize}}
-
+\section{Publications and Preprints}
+% BEGIN GENERATED PUBLICATIONS (scripts/sync_cv_data.py)
+\subsection*{Peer-reviewed publications}
+\begin{itemize}[leftmargin=1.8em,label={},itemsep=0.55em,topsep=0.3em]
+\item[\textbf{[9]}] Ziye Zhu, Richang Huang, \textbf{X.-Z. Chen}, Xunkai Duan, Jiayong Zhang, Igor Zutic, Tong Zhou, \textit{Altermagnetic Proximity Effect}, \href{https://doi.org/10.1103/kqy8-myz1}{Phys. Rev. Lett. 136, 186702 (2026)}.
+\par {\footnotesize\textit{Contribution: Model discussion and manuscript review.}}
+\item[\textbf{[8]}] Zhou Cui, Ziye Zhu, Xunkai Duan, Bowen Hao, \textbf{X.-Z. Chen}, Jiayong Zhang, Tong Zhou, \textit{Symmetry-Driven Unconventional Magnetoelectric Coupling in Perovskite Altermagnets: From Bulk to the Two-Dimensional Limit}, \href{https://doi.org/10.1002/advs.202600004}{Advanced Science, e00004 (2026)}.
+\item[\textbf{[7]}] Sihui Wu, Jiahui Qian, Xunkai Duan, \textbf{X.-Z. Chen}, Zhou Cui, Jiayong Zhang, Chunlan Ma, Tong Zhou, \textit{Electrically switchable quantum anomalous and spin Hall states in two-dimensional honeycomb lattices with non-Dirac bands}, \href{https://doi.org/10.1103/PhysRevB.111.235414}{Phys. Rev. B 111, 235414 (2025)}.
+\par {\footnotesize\textit{Contribution: Model discussion and manuscript review.}}
+\item[\textbf{[6]}] \textbf{X.-Z. Chen}, Guillaume Weick, Dietmar Weinmann, Rodolfo A. Jalabert, \textit{Scanning gate microscopy in graphene nanostructures}, \href{https://doi.org/10.1103/PhysRevB.107.085420}{Phys. Rev. B 107, 085420 (2023)}.
+\par {\footnotesize\textit{Contribution: Analytical derivation, numerical calculations and analysis, figures, and manuscript development.}}
+\item[\textbf{[5]}] \textbf{X.-Z. Chen}, Zhen-Qi Chen, Liang Huang, Celso Grebogi, Ying-Cheng Lai, \textit{Many-body spectral statistics of relativistic quantum billiard systems}, \href{https://doi.org/10.1103/PhysRevResearch.5.013050}{Phys. Rev. Research 5, 013050 (2023)}.
+\par {\footnotesize\textit{Contribution: Initial manuscript writing, numerical calculations and analysis, and figures.}}
+\item[\textbf{[4]}] Xiao-Liang Li, \textbf{X.-Z. Chen}, Chen-Rong Liu, Liang Huang, \textit{Quantization condition of scarring states in complex soft-wall quantum billiards}, \href{https://doi.org/10.7498/aps.69.20200360}{Acta Phys. Sin. 69, 080506 (2020)}.
+\par {\footnotesize\textit{Contribution: Assistance with numerical programs, analysis, and figures.}}
+\item[\textbf{[3]}] Guan-Qun Zhang, \textbf{X.-Z. Chen}, Li Lin, Hai-Lin Peng, Zhong-Fan Liu, Liang Huang, Ning Kang, Hong-Qi Xu, \textit{Transport signatures of relativistic quantum scars in a graphene cavity}, \href{https://doi.org/10.1103/PhysRevB.101.085404}{Phys. Rev. B 101, 085404 (2020)}.
+\par {\footnotesize\textit{Contribution: Co-first author; numerical simulations, analysis of experimental results, and supplementary material writing.}}
+\item[\textbf{[2]}] Chen-Rong Liu, Pei Yu, \textbf{X.-Z. Chen}, Hong-Ya Xu, Liang Huang, Ying-Cheng Lai, \textit{Enhancing von Neumann entropy by chaos in spin-orbit entanglement}, \href{https://doi.org/10.1088/1674-1056/ab3dff}{Chin. Phys. B 28, 100501 (2019)}.
+\par {\footnotesize\textit{Contribution: Numerical-results discussion and manuscript review.}}
+\item[\textbf{[1]}] Chen-Rong Liu, \textbf{X.-Z. Chen}, Hong-Ya Xu, Liang Huang, Ying-Cheng Lai, \textit{Effect of chaos on two-dimensional spin transport}, \href{https://doi.org/10.1103/PhysRevB.98.115305}{Phys. Rev. B 98, 115305 (2018)}.
+\par {\footnotesize\textit{Contribution: Assistance with numerical programs and discussion of numerical results.}}
 \end{itemize}
-
+\subsection*{Preprints}
+\begin{itemize}[leftmargin=1.8em,label={},itemsep=0.55em,topsep=0.3em]
+\item[\textbf{[P3]}] \textbf{X.-Z. Chen}, Jiayong Zhang, Bowen Hao, Jiahui Qian, Ziye Zhu, Igor Zutic, Zhenyu Zhang, Tong Zhou, \textit{Altermagnets Enable Gate-Switchable Helical and Chiral Topological Transport with Spin-Valley-Momentum-Locked Dual Protection}, \href{https://arxiv.org/abs/2603.06487}{arXiv:2603.06487}.
+\item[\textbf{[P2]}] Ziye Zhu, \textbf{X.-Z. Chen}, Xunkai Duan, Zhou Cui, Jiayong Zhang, Igor Zutic, Tong Zhou, \textit{Altermagnetoelectric Spin Field Effect Transistor}, \href{https://arxiv.org/abs/2512.02974}{arXiv:2512.02974}.
+\par {\footnotesize\textit{Contribution: Transport calculations and partial manuscript writing.}}
+\item[\textbf{[P1]}] Richang Huang, Yongliang Hu, \textbf{X.-Z. Chen}, Peng Yu, Igor Zutic, Tong Zhou, \textit{Towards Scalable Braiding: Topological Superconductivity Unlocked under Nearly Arbitrary Magnetic Field Directions in Planar Josephson Junctions}, \href{https://arxiv.org/abs/2504.20031}{arXiv:2504.20031}.
+\par {\footnotesize\textit{Contribution: Assistance with figures and manuscript discussion and review.}}
+\end{itemize}
+% END GENERATED PUBLICATIONS
 
 %-----------PROJECTS-----------------
 \section{Presentations}
@@ -242,8 +206,6 @@ Prior to this, my Ph.D. at ICPCS, Lanzhou University examined wavefunction prope
     		CPS Meeting 2025, Harbin, China, 09/2025.}
         \item {Many-body spectral statistics of relativistic quantum billiards systems\\
                 DPG Meeting 2022, Regensburg, Germany, 09/2022.}
-        \item {Novel QSH and QAH based on Altermagnets\\
-        	CPS Meeting 2022, Harbin, China, 09/2025.}
     \end{itemize}}
 
     \item[]{\textbf{Posters}
